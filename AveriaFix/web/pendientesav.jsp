@@ -92,8 +92,7 @@
                     <a href="averias.jsp"><button class="avrmen"><img src="recursos/verav b.png" alt="Veraverias" class="iconoopc"></button></a>
                     <button class="avrmen selected"><img src="recursos/reloj w.png" alt="Ver" class="iconoopc">Pendientes</button>
                     <a href="anadirav.jsp"><button class="avrmen"><img src="recursos/adave b.png" alt="Anadir" class="iconoopc"></button></a>
-                    <a href="editarav.jsp"><button class="avrmen"><img src="recursos/editar b.png" alt="Editar" class="iconoopc"></button></a>
-                    <a href="printav.jsp"><button class="avrmen"><img src="recursos/imp b.png" alt="Print" class="iconoopc"></button></a>                </div>
+                </div>
                 <div class="titulo-navegador">Averías</div>
             </div>
 
@@ -128,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>                      
             </div>
         </div>
     </body>

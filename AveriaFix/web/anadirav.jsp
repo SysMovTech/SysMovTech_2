@@ -91,36 +91,70 @@
                     <a href="averias.jsp"><button class="avrmen"><img src="recursos/verav b.png" alt="Veraverias" class="iconoopc"></button></a>
                     <a href="pendientesav.jsp"><button class="avrmen"><img src="recursos/reloj b.png" alt="Pendientes" class="iconoopc"></button></a>
                     <button class="avrmen selected"><img src="recursos/adave w.png" alt="Ver" class="iconoopc">Añadir</button>
-                    <a href="editarav.jsp"><button class="avrmen"><img src="recursos/editar b.png" alt="Editar" class="iconoopc"></button></a>
-                    <a href="printav.jsp"><button class="avrmen"><img src="recursos/imp b.png" alt="Print" class="iconoopc"></button></a>
                 </div>
                 <div class="titulo-navegador">Averías</div>
             </div>
-           
+
 
             <div class="contenedor">
-                <div class="contenido">
+                <div class="contenidoaltaav">
                     <div class="izquierda">
-                        <h1>Ver Perfil</h1>
-                        <div class="subtitulo">Nombre</div>
-                        <input type="text" value="Información de la base de datos" readonly class="info-input">
-                        <div class="subtitulo">Número de trabajador</div>
-                        <input type="text" value="Información de la base de datos" readonly class="info-input">                     
-                        <div class="subtitulo">Contraseña</div>
-                        <input type="password" value="contraseña" readonly class="info-input">   
-                        <div class="subtitulo">Rol laboral</div>
-                        <input type="text" value="Información de la base de datos" readonly class="info-input">   
+                        <h1>Alta de avería</h1>
+                        <form action="" method="">
+                            <div class="contOpcAv">
+                                Mantenimiento: 
+                                <div class="checkbox-contenedor">
+                                    <input type="radio" id="check1" name="mantenimiento" class="cuadrocheck">
+                                    <label for="check1" class="check-label">
+                                        <span class="check-text">Correctivo</span>
+                                        <span class="checkmark">x</span>
+                                    </label>
+
+                                    <input type="radio" id="check2" name="mantenimiento" class="cuadrocheck">
+                                    <label for="check2" class="check-label">
+                                        <span class="check-text">Preventivo</span>
+                                        <span class="checkmark">x</span>
+                                    </label>
+
+                                    <input type="radio" id="check3" name="mantenimiento" class="cuadrocheck">
+                                    <label for="check3" class="check-label">
+                                        <span class="check-text">Otros</span>
+                                        <span class="checkmark">x</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="two-column-container">
+                                <div class="left-column">
+                                    <div class="campocolumna">No PDC: <input type="number" name="pdc" class="info-input-add"></div>
+                                    <div class="campocolumna">Fecha de inicio: <input type="date" name="fecha" class="info-input-addB"></div>
+                                </div>
+                                <div class="right-column">
+                                    <div class="campocolumna">Lugar: <input type="text" name="lugar" class="info-input-add"></div>
+                                    <div class="campocolumna">Hora de inicio: <input type="time" name="hora" class="info-input-addB"></div>
+                                </div>
+                            </div>
+                            <div class="formadd">
+                                <div class="subtitulo">Descripción: <input type="text" name="nombre" class="info-input"></div>
+                                <div class="subtitulo">Nombre de quien reporta: <input type="text" name="nombreRep" class="info-input-addF"></div>
+                                <div class="subtitulo">Nombre de quien recibe: <input type="text" name="nombreRep" class="info-input-addR"></div>
+                            </div>
+                            <div class="botones">
+                                <button type="submit" class="confirmar">Agregar avería</button>
+                                <button type="button" class="cancelar" onclick="descargarArchivo()"> Imprimir comprobante </button>
+                            </div>
+
+                        </form>
                     </div>
-                    <div class="derecha">
-                        <!-- acá va la cosa de la bd donde se recupera la dirección de la imagen ok -->
-                        <img src="recursos/tec b.png" alt="Perfil">
-                    </div>
-                </div>
-                <div class="subtituloABAJO">
-                    <div class="subtitulo">Información</div>
-                    <div id="info" class="info-div"> Aquí va el texto que se saca del if donde dependiendo del tipo de perfil se despliega información diferente sobre lo que pueden hacer y etc </div>
                 </div>
             </div>
         </div>
+        <script>
+            function descargarArchivo() {
+                const enlace = document.createElement("a");
+                enlace.href = "ruta/al/archivo.pdf";
+                enlace.download = "Comprobante.pdf";
+                enlace.click();
+            }
+        </script>
     </body>
 </html>

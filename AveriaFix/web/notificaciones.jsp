@@ -11,7 +11,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="estilos/estiloMenu.css"/>
-         <link rel="shortcut icon" href="recursos/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="estilos/general.css"/>
+        <link rel="shortcut icon" href="recursos/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     </head>
@@ -71,7 +72,7 @@
             </div>
             <nav class="menu-section">
                 <a href="notificaciones.jsp" class="menu-item notificaciones active">
-                    <img src="recursos/campana b.png" alt="Notificaciones" class="icon">
+                    <img src="recursos/campana w.png" alt="Notificaciones" class="icon">
                     <span>Notificaciones</span>
                 </a>
                 <a href="averias.jsp" class="menu-item averias">
@@ -85,6 +86,55 @@
             </nav>
             <div class="logout-section">
                 <a href="logout.jsp" class="logout-link">Cerrar sesión</a>
+            </div>
+        </div>
+        
+        
+        <div class="main-container">
+            <div class="navegador">
+                <div class="menu-navegador">
+                    
+                </div>
+                <div class="titulo-navegador"></div>
+            </div>
+            
+            
+            
+            
+            <div class="contenedor-scroll">
+                <div class="fila-contenedores">
+                    <div class="mini-contenedor">
+                        <img src="recursos/imp b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                        <div class="descpendiente">
+                            <div class="titulo-contenedor">
+                                <div class="titulo"><strong>Lugar</strong></div>
+                                <img src="recursos/logo.png" alt="linea" class="mini-linea">
+                            </div>
+                            <div class="desc">
+                                <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mini-contenedor">
+                        <img src="recursos/imp b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                        <div class="descpendiente">
+                            <div class="titulo-contenedor">
+                                <div class="titulo"><strong>Lugar</strong></div>
+                                <img src="recursos/logo.png" alt="linea" class="mini-linea">
+                            </div>
+                            <div class="desc">
+                                <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>  
+                
             </div>
         </div>
     </body>
