@@ -4,7 +4,7 @@ use Averia_Fix;
 #TABLAS PRINCIPALES
 CREATE TABLE IF NOT EXISTS Usuario (
 	no_Trabajador INT NOT NULL,
-    nombre VARCHAR(100),
+    nombre TINYTEXT,
     contrasena VARCHAR(15),
 		PRIMARY KEY(no_Trabajador)
 );
@@ -39,9 +39,21 @@ CREATE TABLE IF NOT EXISTS Estaciones (
 CREATE TABLE IF NOT EXISTS Lineas (
 	id_Linea VARCHAR(3) NOT NULL,
     nom_Linea VARCHAR(8),
+    url_Imagen TEXT,
 		PRIMARY KEY (id_Linea)
 );
 
+CREATE TABLE IF NOT EXISTS Modificaciones (
+	id_Mod INT NOT NULL AUTO_INCREMENT,
+	no_Averia INT NOT NULL,
+    fecha_Mod DATETIME,
+    no_Trabajador INT NOT NULL,
+    PRIMARY KEY (id_Mod),
+        FOREIGN KEY (no_Averia) 
+			REFERENCES Averia(no_Averia),
+		FOREIGN KEY (no_Trabajador) 
+			REFERENCES Usuario(no_Trabajador)
+);
 
 
 #CATÁLOGOS
@@ -96,13 +108,14 @@ CREATE TABLE IF NOT EXISTS Estado (
 CREATE TABLE IF NOT EXISTS TipoUsuarios (
 	id_Tipo_Usr INT NOT NULL,
     tipo_Usr TINYTEXT,
+    url_Imagen TEXT,
 		PRIMARY KEY (id_Tipo_Usr)
 );
 
 
 #TABLAS RELACIONALES
 CREATE TABLE IF NOT EXISTS RelUsrTipo (
-	id_Rel_Usr_Tipo VARCHAR(7) NOT NULL,
+	id_Rel_Usr_Tipo INT NOT NULL auto_increment,
     id_Tipo_Usr INT,
     no_Trabajador INT,
 		PRIMARY KEY (id_Rel_Usr_Tipo),
@@ -258,3 +271,4 @@ CREATE TABLE IF NOT EXISTS RelCalLinea (
 		FOREIGN KEY (id_Linea) 
 			REFERENCES Lineas(id_Linea)
 );
+
