@@ -87,7 +87,7 @@
                 <span class="empresa">AveríaFix</span>
             </div>
             <nav class="menu-section">
-                <a href="notificaciones.jsp" class="menu-item notificaciones active">
+                <a href="notificaciones.jsp" class="menu-item">
                     <img src="recursos/campana w.png" alt="Notificaciones" class="icon">
                     <span>Notificaciones</span>
                 </a>
