@@ -71,11 +71,17 @@
 				) THEN 
 					INSERT INTO Averia (no_Averia, descripcion)
 					VALUES (no_Pdc, descr);
-					
-                    
                     
 					INSERT INTO RelHorarioAveria (no_Averia, id_Tipo_Horario, id_Horario)
-					VALUES (no_Pdc,(SELECT id_Tipo_Horario FROM Tipo_Horario WHERE tipoHorario = 'Inicio'), var_id);
+					VALUES (no_Pdc,(SELECT id_Tipo_Horario FROM TipoHorario WHERE tipoHorario = 'Inicio'), var_id);
+					#nombre del que reporta
+					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
+                    VALUES(nombre_Reporte, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Reporta'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
+                    
+                    #nombre del que recibe
+					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
+                    VALUES(nombre_Recibe, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Recibe'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
+                    
 				END IF;
             END//
             DELIMITER ;
