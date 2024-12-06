@@ -33,7 +33,8 @@
 			DELIMITER //
 			CREATE PROCEDURE Alta_Averia (
 				IN no_Pdc INT,
-                IN lugar TINYTEXT,
+                IN estacion TINYTEXT,
+                IN linea TINYTEXT,
                 IN fecha DATE,
                 IN hora TIME,
                 IN descr TEXT,
@@ -74,7 +75,8 @@
                     
 					INSERT INTO RelHorarioAveria (no_Averia, id_Tipo_Horario, id_Horario)
 					VALUES (no_Pdc,(SELECT id_Tipo_Horario FROM TipoHorario WHERE tipoHorario = 'Inicio'), var_id);
-					#nombre del que reporta
+					
+                    #nombre del que reporta
 					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
                     VALUES(nombre_Reporte, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Reporta'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
                     
@@ -82,10 +84,93 @@
 					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
                     VALUES(nombre_Recibe, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Recibe'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
                     
+                    IF NOT EXISTS (
+						SELECT 1
+                        FROM RelLineaEstacion 
+                        WHERE
+							id_Linea = (SELECT id_Linea FROM Lineas WHERE nom_Linea = linea) AND id_Estacion = (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion)
+                    ) THEN 
+						INSERT INTO RelLineaEstacion(id_Linea, id_Estacion)
+                        VALUES ((SELECT id_Linea FROM Lineas WHERE nom_Linea = linea), (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion));
+					END IF;
+                    
+                    INSERT INTO UbAveria(no_Averia, id_Rel_Linea_Estacion)
+                    VALUES (no_Pdc, (SELECT id_Rel_Linea_Estacion FROM RelLineaEstacion WHERE id_Linea = (SELECT id_Linea FROM Lineas WHERE nom_Linea = linea) AND id_Estacion = (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion)));
 				END IF;
             END//
             DELIMITER ;
-    
+
+		#Editar una avería 
+			#Crear una avería 
+			DELIMITER //
+			CREATE PROCEDURE Alta_Averia (
+				IN no_Pdc INT,
+                IN estacion TINYTEXT,
+                IN linea TINYTEXT,
+                IN fecha DATE,
+                IN hora TIME,
+                IN descr TEXT,
+                IN nombre_Reporte TINYTEXT,
+                IN nombre_Recibe TINYTEXT
+            )
+            BEGIN
+            
+				DECLARE var_horario DATETIME;
+                DECLARE var_id INT;
+                
+                SET var_horario = CAST(CONCAT(fecha, ' ', hora) AS DATETIME);
+                
+                IF NOT EXISTS (
+					SELECT 
+						id_Horario
+                    FROM 
+						Horario
+                    WHERE
+						horario = var_horario
+                ) THEN 
+					INSERT INTO Horario (horario) 
+                    VALUES (var_horario);
+                    SET var_id = (SELECT id_Horario FROM Horario WHERE horario = var_horario);
+				ELSE 
+					SET var_id = (SELECT id_Horario FROM Horario WHERE horario = var_horario);
+                END IF;
+				
+				IF NOT EXISTS ( 
+				SELECT 1
+				FROM 
+					Averia 
+				WHERE 
+					no_Averia = no_Pdc
+				) THEN 
+					INSERT INTO Averia (no_Averia, descripcion)
+					VALUES (no_Pdc, descr);
+                    
+					INSERT INTO RelHorarioAveria (no_Averia, id_Tipo_Horario, id_Horario)
+					VALUES (no_Pdc,(SELECT id_Tipo_Horario FROM TipoHorario WHERE tipoHorario = 'Inicio'), var_id);
+					
+                    #nombre del que reporta
+					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
+                    VALUES(nombre_Reporte, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Reporta'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
+                    
+                    #nombre del que recibe
+					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
+                    VALUES(nombre_Recibe, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Recibe'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
+                    
+                    IF NOT EXISTS (
+						SELECT 1
+                        FROM RelLineaEstacion 
+                        WHERE
+							id_Linea = (SELECT id_Linea FROM Lineas WHERE nom_Linea = linea) AND id_Estacion = (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion)
+                    ) THEN 
+						INSERT INTO RelLineaEstacion(id_Linea, id_Estacion)
+                        VALUES ((SELECT id_Linea FROM Lineas WHERE nom_Linea = linea), (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion));
+					END IF;
+                    
+                    INSERT INTO UbAveria(no_Averia, id_Rel_Linea_Estacion)
+                    VALUES (no_Pdc, (SELECT id_Rel_Linea_Estacion FROM RelLineaEstacion WHERE id_Linea = (SELECT id_Linea FROM Lineas WHERE nom_Linea = linea) AND id_Estacion = (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion)));
+				END IF;
+            END//
+            DELIMITER ;
     
     #Procedimientos para botones de otra cosa
 		#Crear un trabajador

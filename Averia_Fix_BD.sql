@@ -17,14 +17,13 @@ CREATE TABLE IF NOT EXISTS Averia (
 );
 
 CREATE TABLE IF NOT EXISTS Observacion (
-	id_Observacion INT NOT NULL,
+	id_Observacion INT NOT NULL auto_increment,
     descripcion TEXT,
-    fecha DATE,
 		PRIMARY KEY(id_Observacion)
 );
 
 CREATE TABLE IF NOT EXISTS Horario (
-	id_Horario INT NOT NULL,
+	id_Horario INT NOT NULL auto_increment,
     horario DATETIME,
 		PRIMARY KEY (id_Horario)
 );
@@ -206,6 +205,20 @@ CREATE TABLE IF NOT EXISTS RelHorarioAveria (
 			REFERENCES Horario(id_Horario)
 );
 
+CREATE TABLE IF NOT EXISTS RelHorarioObs (
+	id_Rel_Horario_Obs INT NOT NULL AUTO_INCREMENT,
+    id_Observacion INT,
+    id_Tipo_Horario INT,
+    id_Horario INT,
+		PRIMARY KEY (id_Rel_Horario_Obs),
+        FOREIGN KEY (id_Observacion) 
+			REFERENCES Observacion(id_Observacion),
+		FOREIGN KEY (id_Tipo_Horario) 
+			REFERENCES TipoHorario(id_Tipo_Horario),
+		FOREIGN KEY (id_Horario) 
+			REFERENCES Horario(id_Horario)
+);
+
 CREATE TABLE IF NOT EXISTS RelLineaEstacion (
 	id_Rel_Linea_Estacion VARCHAR(8) NOT NULL,
     id_Linea VARCHAR(3),
@@ -218,7 +231,7 @@ CREATE TABLE IF NOT EXISTS RelLineaEstacion (
 );
 
 CREATE TABLE IF NOT EXISTS UbAveria (
-	id_Ub_Averia INT NOT NULL,
+	id_Ub_Averia INT  NOT NULL auto_increment,
     no_Averia INT,
     id_Rel_Linea_Estacion VARCHAR(8),
 		PRIMARY KEY (id_Ub_Averia),
