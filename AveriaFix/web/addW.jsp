@@ -126,7 +126,7 @@
                         </div>
                         <div class="derecha">
                             <!-- acá va la cosa de la bd donde se recupera la dirección de la imagen ok -->
-                            <img src="recursos/tec b.png" alt="Perfil">
+                            <img src="recursos/per b.png" alt="Perfil">
                         </div>
                     </div>
                     <div class="botones">
