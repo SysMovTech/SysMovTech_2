@@ -25,7 +25,7 @@
                 user = "0";
             }
         }
-        
+
         if (password == null) {
             password = "0";
         } else {
@@ -40,34 +40,32 @@
 
         if (!user.equals("0") && !password.equals("0")) {
             Base bd = new Base();
+            int usuario = Integer.parseInt(user);
 
             bd.conectar();
 
             if (user.matches("\\d+")) {
 
-                int usuario = Integer.parseInt(user);
-                ResultSet rsValUser = bd.consultaUser(usuario, password);
+                try {
+                    ResultSet rsValUser = bd.consultaUser(usuario, password);
 
-                if (rsValUser.next()) {
+                    if (rsValUser.next()) {
 
-                    HttpSession miSesion = (HttpSession) request.getSession();
+                        HttpSession miSesion = (HttpSession) request.getSession();
 
-                    int idUser = rsValUser.getInt("no_Trabajador");
-                    String nombreUsr = rsValUser.getString("nombre");
-                    String cont = rsValUser.getString("contrasena");
-                    miSesion.setAttribute("idUsr", idUser);
-                    miSesion.setAttribute("nombreUsr", nombreUsr);
-                    miSesion.setAttribute("psw", cont);
-                    response.sendRedirect("perfil.jsp");
-                } else {
-                    response.sendRedirect("index.html");
+                        int idUser = rsValUser.getInt("@no_Trabajador");
+                        String contrasena = rsValUser.getString("@contrasenia");
+                        miSesion.setAttribute("idUsr", idUser);
+                        miSesion.setAttribute("psw", contrasena);
+                        response.sendRedirect("notificaciones.jsp");
+                    }
+                    
+                } catch (Exception ex) {
+                    
                 }
-
             }
         }
-
     %>
     <body>
-
     </body>
 </html>

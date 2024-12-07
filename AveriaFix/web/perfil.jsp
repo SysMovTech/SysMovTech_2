@@ -17,15 +17,14 @@
         HttpSession miSesion = request.getSession(false); // No crear una nueva sesión si no existe
 
         Integer idUsr = null;
-        String nombreUsr = null;
         String password = null;
+        String nombreUsr = null;
         String rol = null;
         String info = null;
 
         if (miSesion != null) {
             idUsr = (Integer) miSesion.getAttribute("idUsr");
-            nombreUsr = (String) miSesion.getAttribute("nombreUsr");
-            password = (String) miSesion.getAttribute("psw");
+            password = (String) String.valueOf(miSesion.getAttribute("psw"));
 
             Base bd = new Base();
 
@@ -34,6 +33,8 @@
             ResultSet rsInfoPerfil = bd.informePerfil(idUsr, password);
 
             if (rsInfoPerfil.next()) {
+
+                nombreUsr = rsInfoPerfil.getString("Nombre");
                 rol = rsInfoPerfil.getString("Rol");
 
                 if (rol.equals("Administrador")) {
@@ -46,11 +47,10 @@
                     info = "Este usuario es un técnico";
                 }
             }
-        }
 
-        if (idUsr == null || nombreUsr == null || password == null) {
-            response.sendRedirect("index.html");
-        }
+            if (idUsr == null || password == null) {
+                response.sendRedirect("index.html");
+            }
 
 
     %>

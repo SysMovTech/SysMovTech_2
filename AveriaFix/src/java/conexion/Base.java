@@ -96,7 +96,7 @@ public class Base {
             throw new SQLException("No hay conexión a la base de datos.");
         }
 
-        CallableStatement stmt = this.conn.prepareCall("{CALL info_Perfil(?, ?)}");
+        CallableStatement stmt = this.conn.prepareCall("{CALL info_Perfil(?,?)}");
         stmt.setInt(1, no_user);
         stmt.setString(2, password);
 
