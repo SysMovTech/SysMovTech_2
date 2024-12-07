@@ -118,10 +118,9 @@
                             <input type="password" name="contrasena" class="info-input" placeholder="Contraseña ">
                             <div class="subtitulo">Rol laboral</div>
                             <select name="rol" id="rol" class="info-input">
-                                <option value="" disabled selected>Técnico | Supervisor | Jefe</option>
+                                <option value="" disabled selected>Técnico | Supervisor</option>
                                 <option value="Tecnico">Técnico</option>
                                 <option value="Supervisor">Supervisor</option>
-                                <option value="Jefe">Jefe</option>
                             </select>
                         </div>
                         <div class="derecha">
