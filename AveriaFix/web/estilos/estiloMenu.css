@@ -74,6 +74,10 @@ body {
     content: url('recursos/averia w.png');
 }
 
+.menu-item.trabajadores.active .icon {
+    content: url('recursos/trabW.PNG');
+}
+
 .menu-item.perfil.active .icon {
     content: url('recursos/per w.png');
 }
