@@ -27,7 +27,6 @@
 
         if (miSesion != null) {
             idUsr = (Integer) miSesion.getAttribute("idUsr");
-            nombreUsr = (String) miSesion.getAttribute("nombreUsr");
             password = (String) miSesion.getAttribute("psw");
         }
     %>

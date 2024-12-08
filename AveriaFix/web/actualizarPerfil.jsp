@@ -9,10 +9,10 @@
     </head>
     <body>
         <%
-            HttpSession miSesion = request.getSession(false); // No crear una nueva sesión si no existe
+            HttpSession miSesion = request.getSession(false);
 
             if (miSesion == null) {
-                response.sendRedirect("index.html"); // Redirigir si no hay sesión
+                response.sendRedirect("index.html");
                 return;
             }
 
@@ -22,22 +22,21 @@
             String confPassword = request.getParameter("confirmar_contrasena");
 
             if (idUsr == null || password == null || confPassword == null) {
-                response.sendRedirect("index.html"); // Redirigir si faltan datos
+                response.sendRedirect("index.html");
                 return;
             }
 
             if (password.isEmpty() || confPassword.isEmpty() || !password.equals(confPassword)) {
-                out.println("<p>Error: Las contraseñas no coinciden o están vacías.</p>");
+                response.sendRedirect("editperfil.jsp");
             } else {
                 try {
                     Base bd = new Base();
                     bd.conectar();
 
-                    // Llamar al método para actualizar el perfil
                     int filasActualizadas = bd.editaPerfil(idUsr, psw, confPassword);
 
                     if (filasActualizadas > 0) {
-                        response.sendRedirect("index.html"); // Redirigir si la actualización fue exitosa
+                        response.sendRedirect("index.html");
                     } else {
                         out.println("<p>Error: No se pudo actualizar el perfil. Verifica tu contraseña actual.</p>");
                     }

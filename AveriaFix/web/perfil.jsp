@@ -46,11 +46,13 @@
                 } else {
                     info = "Este usuario es un técnico";
                 }
+                bd.cierraConexion();
             }
 
             if (idUsr == null || password == null) {
                 response.sendRedirect("index.html");
             }
+        }
 
 
     %>
@@ -143,13 +145,13 @@
 
                         <div class="subtitulo">Nombre</div>
                         <input type="text" value="<%= nombreUsr%>" readonly class="info-input">
-
+                        
                         <div class="subtitulo">Número de trabajador</div>
                         <input type="text" value="<%= idUsr%>" readonly class="info-input">                     
 
                         <div class="subtitulo">Contraseña</div>
                         <input type="password" value="<%= password%>" readonly class="info-input">   
-
+                        
                         <div class="subtitulo">Rol laboral</div>
                         <input type="text" value="<%= rol%>" readonly class="info-input">   
                     </div>

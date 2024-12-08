@@ -1,4 +1,7 @@
+<%@page import="conexion.Base"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,15 +16,27 @@
     </head>
     <%
         HttpSession miSesion = request.getSession(false); // No crear una nueva sesión si no existe
-        
+
         Integer idUsr = null;
         String nombreUsr = null;
         String password = null;
-        
+
         if (miSesion != null) {
+
             idUsr = (Integer) miSesion.getAttribute("idUsr");
-            nombreUsr = (String) miSesion.getAttribute("nombreUsr");
             password = (String) miSesion.getAttribute("psw");
+
+            Base bd = new Base();
+
+            bd.conectar();
+
+            ResultSet rsInfoPerfil = bd.informePerfil(idUsr, password);
+
+            if (rsInfoPerfil.next()) {
+
+                nombreUsr = rsInfoPerfil.getString("Nombre");
+
+            }
         }
     %>
     <body>

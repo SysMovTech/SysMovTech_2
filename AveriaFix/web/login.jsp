@@ -58,10 +58,11 @@
                         miSesion.setAttribute("idUsr", idUser);
                         miSesion.setAttribute("psw", contrasena);
                         response.sendRedirect("notificaciones.jsp");
+                        bd.cierraConexion();
                     }
                     
                 } catch (Exception ex) {
-                    
+                    response.sendRedirect("index.html");
                 }
             }
         }
