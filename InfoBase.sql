@@ -28,10 +28,14 @@ INSERT INTO RelUsrTipo VALUES
 (3, 3, 2023090309);
 
 INSERT INTO TipoAveria VALUES
-("FR", "Texto"),
-("FV", "Texto"),
-("MU", "Texto"),
-("P", "Texto");
+("FR", "Falla Real"),
+("FV", "Falla Virtual"),
+("MU", "Mal Uso"),
+("P", "Pendiente"),
+("OD", "Otro Departamento"),
+("CA", "Cancelada"),
+("*M", "Maniobra"),
+("CL", "Cambio de Lámpara");
 
 INSERT INTO CodigoCausa VALUES
 ("CADA", "Cable Dañado"),
@@ -39,20 +43,35 @@ INSERT INTO CodigoCausa VALUES
 ("CODE", "Componente Desajustado"),
 ("COSU", "Contactos Sucios"),
 ("DESA", "Desaparicion"),
-("EQDE", "EQ.Gaveta"),
+("EQDES", "EQ.Gaveta"),
 ("FACO", "Falso COntacto"),
-("FALI", "Falla de Alimentacion"),
-("FARM", "Armario T,G,PCC,SO,ARL"),
-("FATI", "Falla Ati");
+("FALIN", "Falla de Alimentacion"),
+("FARMAR", "Armario T,G,PCC,SO,ARL"),
+("FATI", "Falla Ati"),
+("FCVOLO", "Comp. Voceo Local"),
+("FEQCON", "Falla Harris/PCM"),
+("FEQPCC", "EQ. PCC"),
+("FEQVIA", "EQ. de Vía"),
+("FPLATI", "Platina"),
+("FUNISE", "Unidad Central"),
+("LAMF", "Lámpara Fundida"),
+("LIDA", "Cable o Línea Averiada"),
+("NEGLI", "Negligencia"),
+("ODEPTO", "Otro Departamento"),
+("OSISTE", "Otro Sistema"),
+("SINFA", "Sin Falla"),
+("TELMEX", "TELMEX"),
+("VODE", "Volúmen Desajustado");
 
 INSERT INTO Subsistema VALUES
-("TA", "Texto"),
-("TD", "Texto"),
-("TT", "Texto"),
-("RA", "Texto"),
-("SO", "Texto"),
-("CB", "Texto"),
-("IN", "Texto");
+("TA", "Telefonía Automática"),
+("TD", "Telefonía Directa"),
+("TT", "Telefonía de trenes"),
+("RA", "Relojes de Andén"),
+("SO", "Sonido"),
+("CB", "Cargadores de Baterías"),
+("GR", "Grabadoras"),
+("IN", "Interfonos");
 
 INSERT INTO IntervencionUbicacion VALUES
 ("APTE", "Aparato Telefonico"),
@@ -64,7 +83,22 @@ INSERT INTO IntervencionUbicacion VALUES
 ("CLOC", "Cableado/Regleta Local/de Piso/Roseta"),
 ("CIS", "Cableado Armario JS/REP Multiple"),
 ("CPCC", "Cableado REP 4o. P PCC"),
-("CSIN", "Cableado Señales de Entrada");
+("CSIN", "Cableado Señales de Entrada"),
+("EAND", "EQ. / Cableado de Andén"),
+("EARL", "EQ. de Armario de Línea"),
+("EASO", "EQ. de Armario de Sonido"),
+("EIN", "EQ. de Interfón"),
+("ECJE", "EQ./ Cableado de CJE"),
+("ECOT", "EQ. de Conmutador PCM"),
+("EGRA", "EQ./ Cableado de Grabadora"),
+("EPM", "EQ./ Cableado de PML o PMT"),
+("EPCC", "EQ. Armario de PCC"),
+("ETQP", "EQ./ Cableado de Taq. Principal"),
+("ETQS", "EQ./ Cableado de Taq. Secundaria"),
+("EUT", "EQ./ Cableado de Unidad de Tiempo"),
+("EVIA", "EQ. de Via"),
+("EAGLT", "Armario 32U/G"),
+("PLAT", "Platinas de Pupitres de TD");
 
 INSERT INTO TipoHorario VALUES
 (1, "Alta"),

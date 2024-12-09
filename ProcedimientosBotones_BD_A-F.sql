@@ -220,7 +220,7 @@
                     VALUES (var_id_Obs, (SELECT id_Tipo_Horario FROM TipoHorario WHERE tipo_Horario = 'Observacion final'), var_id);
                     
                     # Dar de baja la Averia 
-                    UPDATE RelEstadoAveria SET id_Estado = (SELECT id_Estado FROM Estado WHERE estado = 'No Activo')
+                    UPDATE RelEstadoAveria SET id_Estado = (SELECT id_Estado FROM Estado WHERE estado = 'Inactivo')
 					WHERE no_Averia = no_Pdc;
                     
                     # Calificacion si el usuario es supervisor: 
@@ -292,25 +292,24 @@
 					WHERE 
 						trabajador = numero
 				) THEN 
-					#Actualizamos nombre
-					UPDATE Usuario SET nombre = nombre_I 
-					WHERE no_Trabajador = numero;
-                    
                     #Actualizamos contrasena
                     UPDATE Usuario SET contrasena = pass_word 
 					WHERE no_Trabajador = numero;
-				ELSE 
-					#Actualizamos nombre
-					UPDATE Usuario SET nombre = nombre_I 
-					WHERE no_Trabajador = numero;
-                    
-                    #Actualizamos contrasena
-                    UPDATE Usuario SET contrasena = pass_word 
-					WHERE no_Trabajador = numero;
-                    
-					UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
-                    WHERE no_Trabajador = numero;
-				END IF;
+				ELSE IF (
+						SELECT 1
+						FROM 
+							RelUsuario 
+						WHERE 
+							trabajador = no_Trabajador AND id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo = 'Administrador')
+					) THEN
+						#Actualizamos nombre
+						UPDATE Usuario SET nombre = nombre_I 
+						WHERE no_Trabajador = numero;
+						
+						UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
+						WHERE no_Trabajador = numero;
+					END IF;
+                END IF;
 			END//
 			DELIMITER ;
             

@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS TipoAveria (
 );
 
 CREATE TABLE IF NOT EXISTS CodigoCausa (
-	id_Codigo_Causa VARCHAR(2) NOT NULL,
+	id_Codigo_Causa VARCHAR(6) NOT NULL,
     codigo_Causa TINYTEXT,
 		PRIMARY KEY (id_Codigo_Causa)
 );
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS Subsistema (
 );
 
 CREATE TABLE IF NOT EXISTS IntervencionUbicacion (
-	id_Intervencion_Ubicacion VARCHAR(2) NOT NULL,
+	id_Intervencion_Ubicacion VARCHAR(6) NOT NULL,
     intervencion_Ubicacion TINYTEXT,
 		PRIMARY KEY (id_Intervencion_Ubicacion)
 );

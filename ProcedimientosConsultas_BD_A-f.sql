@@ -314,7 +314,7 @@
 				JOIN 
 					Estaciones E ON R.id_Estacion = E.id_Estacion
 				WHERE A.no_Averia = num_Averia AND
-					ES.estado = 'No Activo'
+					ES.estado = 'Inactivo'
 				ORDER BY M.fecha_Mod DESC;
 			END //
 		DELIMITER ;
@@ -382,7 +382,7 @@
 					JOIN 
 						Estaciones E ON R.id_Estacion = E.id_Estacion
 					WHERE A.no_Averia = num_Averia 
-					AND ES.estado = 'No Activo' 
+					AND ES.estado = 'Inactivo' 
 					AND M.fecha_Mod >= DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 1 MONTH), '%Y-%m-01')
 					ORDER BY M.fecha_Mod DESC;
 				END //
@@ -416,7 +416,7 @@
 					JOIN 
 						Estaciones E ON R.id_Estacion = E.id_Estacion
 					WHERE A.no_Averia = num_Averia 
-					AND ES.estado = 'No Activo' 
+					AND ES.estado = 'Inactivo' 
 					AND M.fecha_Mod >= DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 2 MONTH), '%Y-%m-01')
 					ORDER BY M.fecha_Mod DESC;
 				END //
@@ -450,7 +450,7 @@
 					JOIN 
 						Estaciones E ON R.id_Estacion = E.id_Estacion
 					WHERE A.no_Averia = num_Averia 
-					AND ES.estado = 'No Activo' 
+					AND ES.estado = 'Inactivo' 
 					AND M.fecha_Mod >= DATE_FORMAT(DATE_SUB(CURDATE(), INTERVAL 6 MONTH), '%Y-%m-01')
 					ORDER BY M.fecha_Mod DESC;
 				END //
