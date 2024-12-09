@@ -46,7 +46,7 @@
 					VALUES (no_Pdc, descr);
                     
 					INSERT INTO RelHorarioAveria (no_Averia, id_Tipo_Horario, id_Horario)
-					VALUES (no_Pdc,(SELECT id_Tipo_Horario FROM TipoHorario WHERE tipoHorario = 'Alta'), var_id);
+					VALUES (no_Pdc,(SELECT id_Tipo_Horario FROM TipoHorario WHERE tipo_Horario = 'Alta'), var_id);
 					
                     #nombre del que reporta
 					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
@@ -296,8 +296,7 @@
                     #Actualizamos contrasena
                     UPDATE Usuario SET contrasena = pass_word 
 					WHERE no_Trabajador = numero;
-				ELSE IF (
-<<<<<<< HEAD
+				ELSEIF (
 						SELECT 1
 						FROM 
 							RelUsuario 
@@ -312,7 +311,7 @@
 						WHERE no_Trabajador = numero;
 					END IF;
                 END IF;
-=======
+                
 					SELECT 1
                     FROM
 						Usuario
@@ -331,7 +330,6 @@
                     WHERE no_Trabajador = numero;
 				END IF;
 			END IF;
->>>>>>> 682b919ba7d690fd5707ee93136ee7cce6dffeac
 			END//
 			DELIMITER ;
             

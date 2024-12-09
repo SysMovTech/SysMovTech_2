@@ -1,8 +1,8 @@
 #TRIGGERS 
 
 DELIMITER //
-CREATE TRIGGER tr_Modificacion
-AFTER INSERT OR UPDATE ON Averia
+CREATE TRIGGER tr_Modificacion_I
+AFTER INSERT ON Averia
 FOR EACH ROW 
 BEGIN 
     DECLARE trabajador INT;
@@ -11,7 +11,21 @@ BEGIN
     
     INSERT INTO Modificaciones(no_Averia, fecha_Mod, no_Trabajador) 
     VALUES (NEW.no_Averia, NOW(), trabajador);
-END;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER tr_Modificacion_A
+AFTER UPDATE ON Averia
+FOR EACH ROW 
+BEGIN 
+    DECLARE trabajador INT;
+    -- Tomamos el valor de la variable de sesión
+    SET trabajador = @no_Trabajador;
+    
+    INSERT INTO Modificaciones(no_Averia, fecha_Mod, no_Trabajador) 
+    VALUES (NEW.no_Averia, NOW(), trabajador);
+END //
 DELIMITER ;
 
 DELIMITER //
@@ -19,7 +33,7 @@ CREATE TRIGGER tr_Usr_Activo
 AFTER INSERT ON Usuario
 FOR EACH ROW 
 BEGIN 
-	DECLARE state int;
+	DECLARE state INT;
     SELECT 
 		id.Estado 
 	INTO 
@@ -27,11 +41,11 @@ BEGIN
 	FROM 
 		Estado 
 	WHERE 	
-		estado = 'Activo'
+		estado = 'Activo';
 	
     INSERT INTO RelEstadoUsr(id_Estado, no_Trabajador) 
     VALUES (state, NEW.no_Trabajador);
-END;
+END//
 DELIMITER ;
 
 DELIMITER //
@@ -47,9 +61,9 @@ BEGIN
 	FROM 
 		Estado 
 	WHERE 	
-		estado = 'Activo'
+		estado = 'Activo';
 	
     INSERT INTO RelEstadoAveria(id_Estado, no_Averia) 
     VALUES (state, NEW.no_Averia);
-END;
+END//
 DELIMITER ;

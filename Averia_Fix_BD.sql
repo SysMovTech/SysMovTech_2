@@ -23,14 +23,14 @@ CREATE TABLE IF NOT EXISTS Observacion (
 );
 
 CREATE TABLE IF NOT EXISTS Horario (
-	id_Horario INT NOT NULL,
+	id_Horario INT NOT NULL auto_increment,
     horario DATETIME,
 		PRIMARY KEY (id_Horario)
 );
 
 CREATE TABLE IF NOT EXISTS Estaciones (
 	id_Estacion VARCHAR(3) NOT NULL,
-    nom_Estacion VARCHAR(30),
+    nom_Estacion VARCHAR(100),
     url_Imagen TEXT,
 		PRIMARY KEY(id_Estacion)
 );
@@ -63,11 +63,7 @@ CREATE TABLE IF NOT EXISTS TipoAveria (
 );
 
 CREATE TABLE IF NOT EXISTS CodigoCausa (
-<<<<<<< HEAD
 	id_Codigo_Causa VARCHAR(6) NOT NULL,
-=======
-	id_Codigo_Causa VARCHAR(4) NOT NULL,
->>>>>>> 682b919ba7d690fd5707ee93136ee7cce6dffeac
     codigo_Causa TINYTEXT,
 		PRIMARY KEY (id_Codigo_Causa)
 );
@@ -79,11 +75,7 @@ CREATE TABLE IF NOT EXISTS Subsistema (
 );
 
 CREATE TABLE IF NOT EXISTS IntervencionUbicacion (
-<<<<<<< HEAD
 	id_Intervencion_Ubicacion VARCHAR(6) NOT NULL,
-=======
-	id_Intervencion_Ubicacion VARCHAR(4) NOT NULL,
->>>>>>> 682b919ba7d690fd5707ee93136ee7cce6dffeac
     intervencion_Ubicacion TINYTEXT,
 		PRIMARY KEY (id_Intervencion_Ubicacion)
 );
@@ -284,6 +276,5 @@ CREATE TABLE IF NOT EXISTS RelEstadoAveria (
 		FOREIGN KEY (no_Averia) 
 			REFERENCES Averia(no_Averia)
 );
-
 
 
