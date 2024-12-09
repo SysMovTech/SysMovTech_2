@@ -114,6 +114,47 @@ INSERT INTO Lineas VALUES
 ("L-A", "Línea A", "recursos/lineaA.png"),
 ("L-B", "Línea B", "recursos/lineaB.png");
 
+INSERT INTO Estaciones VALUES
+("ORO", "Observatorio", "recursos/observatorio.png"),
+("TYA", "Tacubaya", "recursos/tacubaya.png"),
+("JLA", "Juanacatlan", "recursos/juanacatlan.png"),
+("CPE", "Chapultepec", "recursos/chapultepec.png"),
+("SLA", "Sevilla", "recursos/sevilla.png"),
+("ITE", "Insurgentes", "recursos/insurgentes.png"),
+("CMO", "Cuauhtemoc", "recursos/cuauhtemoc.png"),
+("BRA", "Balderas", "recursos/balderas.png"),
+("SGA", "Salto del agua", "recursos/saltodelAgua.png"),
+("ICA", "Isabel la Catolica", "recursos/isabelCatolica.png"),
+("PRE", "Pino Suárez", "recursos/pinoSuarez.png"),
+("MCE", "Merced", "recursos/merced.png"),
+("CRA", "Candelaria", "recursos/candelaria.png"),
+("SRO", "San Lázaro", "recursos/sanLazaro.png"),
+("MMA", "Moctezuma", "recursos/moctezuma.png"),
+("BNA", "Balbuena", "recursos/balbuena.png"),
+("BRO", "Boulevard Puerto Aereo", "recursos/boulevarPA.png"),
+("GRA", "Gomez Farias", "recursos/gomezFarias.png"),
+("ZZA", "Zaragoza", "recursos/zaragoza.png"),
+("PLA", "Pantitlan", "recursos/pan titlan.png");
+
+INSERT INTO RelLineaEstacion VALUES
+("L-1-ORO","L-1","ORO"),
+("L-1-TYA","L-1","TYA"),
+("L-1-JLA","L-1","JLA"),
+("L-1-CPE","L-1","CPE"),
+("L-1-SLA","L-1","SLA"),
+("L-1-ITE","L-1","ITE"),
+("L-1-CMO","L-1","CMO"),
+("L-1-BRA","L-1","BRA"),
+("L-1-SGA","L-1","SGA"),
+("L-1-ICA","L-1","ICA"),
+("L-1-PRE","L-1","PRE"),
+("L-1-MCE","L-1","MCE"),
+("L-1-CRA","L-1","CRA"),
+("L-1-SRO","L-1","SRO"),
+("L-1-MMA","L-1","MMA"),
+("L-1-BNA","L-1","BNA"),
+("L-1-ZZA","L-1","ZZA"),
+("L-1-PLA","L-1","PLA");
 
 INSERT INTO TipoHorario VALUES
 (1, "Alta"),
