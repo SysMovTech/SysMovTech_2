@@ -5,10 +5,7 @@ INSERT INTO TipoUsuarios VALUES
 (2, "Supervisor", "recursos/sup b.png"),
 (3, "Tecnico", "recursos/tec b.png");
 
-INSERT INTO Horario VALUES
-(1, "2024-12-08 17:00:00");
-
-INSERT  Estado VALUES 
+INSERT INTO Estado VALUES 
 (1, "Activo"),
 (2, "Inactivo");
 

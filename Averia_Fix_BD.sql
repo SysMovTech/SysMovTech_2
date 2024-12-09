@@ -1,4 +1,4 @@
- create database Averia_Fix;
+create database Averia_Fix;
 use Averia_Fix;
 
 #TABLAS PRINCIPALES
@@ -23,7 +23,11 @@ CREATE TABLE IF NOT EXISTS Observacion (
 );
 
 CREATE TABLE IF NOT EXISTS Horario (
+<<<<<<< HEAD
 	id_Horario INT NOT NULL auto_increment,
+=======
+	id_Horario INT NOT NULL AUTO_INCREMENT,
+>>>>>>> b2b24ab80ec306b7111b844367d02fb13209f7f2
     horario DATETIME,
 		PRIMARY KEY (id_Horario)
 );

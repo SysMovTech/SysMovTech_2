@@ -5,8 +5,8 @@
 			DELIMITER //
 			CREATE PROCEDURE Alta_Averia (
 				IN no_Pdc INT,
-                IN estacion TINYTEXT,
-                IN linea TINYTEXT,
+                IN estacion VARCHAR(3),
+                IN linea VARCHAR(4),
                 IN fecha DATE,
                 IN hora TIME,
                 IN descr TEXT,
@@ -60,14 +60,14 @@
 						SELECT 1
                         FROM RelLineaEstacion 
                         WHERE
-							id_Linea = (SELECT id_Linea FROM Lineas WHERE nom_Linea = linea) AND id_Estacion = (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion)
+							id_Linea = linea AND id_Estacion = estacion
                     ) THEN 
 						INSERT INTO RelLineaEstacion(id_Linea, id_Estacion)
-                        VALUES ((SELECT id_Linea FROM Lineas WHERE nom_Linea = linea), (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion));
+                        VALUES (linea, estacion);
 					END IF;
                     
                     INSERT INTO UbAveria(no_Averia, id_Rel_Linea_Estacion)
-                    VALUES (no_Pdc, (SELECT id_Rel_Linea_Estacion FROM RelLineaEstacion WHERE id_Linea = (SELECT id_Linea FROM Lineas WHERE nom_Linea = linea) AND id_Estacion = (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion)));
+                    VALUES (no_Pdc, (SELECT id_Rel_Linea_Estacion FROM RelLineaEstacion WHERE id_Linea = linea AND id_Estacion = estacion));
 				END IF;
             END//
             DELIMITER ;
@@ -296,7 +296,11 @@
                     #Actualizamos contrasena
                     UPDATE Usuario SET contrasena = pass_word 
 					WHERE no_Trabajador = numero;
+<<<<<<< HEAD
 				ELSEIF (
+=======
+				ELSE IF (
+>>>>>>> b2b24ab80ec306b7111b844367d02fb13209f7f2
 						SELECT 1
 						FROM 
 							RelUsuario 
@@ -309,6 +313,7 @@
 						
 						UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
 						WHERE no_Trabajador = numero;
+<<<<<<< HEAD
 					END IF;
                 END IF;
                 
@@ -328,6 +333,12 @@
                     
 					UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
                     WHERE no_Trabajador = numero;
+=======
+                        
+                        #Actualizamos sobre contraseña
+                        UPDATE Usario SET contrasena = pass_word
+                        WHERE no_Trabajador = numero;
+>>>>>>> b2b24ab80ec306b7111b844367d02fb13209f7f2
 				END IF;
 			END IF;
 			END//
@@ -360,9 +371,9 @@
 				IF trabajador IS NOT NULL THEN
 					SET @no_Trabajador = trabajador;
                     SET @contrasenia = pass_word;
+                                    
+                SELECT @no_Trabajador, @contrasenia;
 				END IF;
-                
-                select @no_Trabajador, @contrasenia;
 			END//
 			DELIMITER ;
             
