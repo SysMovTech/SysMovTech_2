@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS Estaciones (
 );
 
 CREATE TABLE IF NOT EXISTS Lineas (
-	id_Linea VARCHAR(3) NOT NULL,
-    nom_Linea VARCHAR(8),
+	id_Linea VARCHAR(4) NOT NULL,
+    nom_Linea TINYTEXT,
     url_Imagen TEXT,
 		PRIMARY KEY (id_Linea)
 );
@@ -63,7 +63,11 @@ CREATE TABLE IF NOT EXISTS TipoAveria (
 );
 
 CREATE TABLE IF NOT EXISTS CodigoCausa (
+<<<<<<< HEAD
 	id_Codigo_Causa VARCHAR(6) NOT NULL,
+=======
+	id_Codigo_Causa VARCHAR(4) NOT NULL,
+>>>>>>> 682b919ba7d690fd5707ee93136ee7cce6dffeac
     codigo_Causa TINYTEXT,
 		PRIMARY KEY (id_Codigo_Causa)
 );
@@ -75,7 +79,11 @@ CREATE TABLE IF NOT EXISTS Subsistema (
 );
 
 CREATE TABLE IF NOT EXISTS IntervencionUbicacion (
+<<<<<<< HEAD
+	id_Intervencion_Ubicacion VARCHAR(6) NOT NULL,
+=======
 	id_Intervencion_Ubicacion VARCHAR(4) NOT NULL,
+>>>>>>> 682b919ba7d690fd5707ee93136ee7cce6dffeac
     intervencion_Ubicacion TINYTEXT,
 		PRIMARY KEY (id_Intervencion_Ubicacion)
 );
@@ -195,7 +203,7 @@ CREATE TABLE IF NOT EXISTS RelObsAveria (
 );
 
 CREATE TABLE IF NOT EXISTS RelHorarioAveria (
-	id_Rel_Horario_Averia INT NOT NULL AUTO_INCREMENT,
+	id_Rel_Horario_Averia INT NOT NULL,
     no_Averia INT,
     id_Tipo_Horario INT,
     id_Horario INT,
@@ -276,3 +284,6 @@ CREATE TABLE IF NOT EXISTS RelEstadoAveria (
 		FOREIGN KEY (no_Averia) 
 			REFERENCES Averia(no_Averia)
 );
+
+
+
