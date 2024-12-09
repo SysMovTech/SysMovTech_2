@@ -122,7 +122,7 @@ public class Base {
         return rowsAffected;
     }
 
-    public int altaAveria(int noPdc, String lugar, Date fecha, Time hora, String descripcion, String nombreReporte, String nombreRecibe) throws SQLException {
+    public int altaAveria(int noPdc, String estacion, String linea, Date fecha, Time hora, String descripcion, String nombreReporte, String nombreRecibe) throws SQLException {
         if (this.conn == null || this.conn.isClosed()) {
             throw new SQLException("No hay conexión a la base de datos.");
         }
@@ -132,7 +132,8 @@ public class Base {
         try (CallableStatement stmt = this.conn.prepareCall("{CALL Alta_Averia(?, ?, ?, ?, ?, ?, ?, ?)}")) {
             // Establecer los parámetros
             stmt.setInt(1, noPdc);
-            stmt.setString(2, lugar);
+            stmt.setString(2, estacion);
+            stmt.setString(2, linea);
             stmt.setDate(3, fecha);
             stmt.setTime(4, hora);
             stmt.setString(5, descripcion);

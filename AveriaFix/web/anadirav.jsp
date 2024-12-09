@@ -115,7 +115,7 @@
                 <div class="contenidoaltaav">
                     <div class="izquierda">
                         <h1>Alta de avería</h1>
-                        <form action="" method="">
+                        <form action="generarAveria.jsp" method="post">
                             <div class="contOpcAv">
                                 Mantenimiento: 
                                 <div class="checkbox-contenedor">
@@ -167,13 +167,13 @@
                             </div>
                             <div class="formadd">
                                 <div class="campocolumna">Estación:
-                                    <select id="estaciones" class="info-input">
+                                    <select id="estaciones" class="info-input" name="estacion">
                                         <option value="" disabled selected>Seleccione una estación</option>
                                     </select>
                                 </div>
-                                <div class="subtitulo">Descripción: <input type="text" name="nombre" class="info-input"></div>
-                                <div class="subtitulo">Nombre de quien reporta: <input type="text" name="nombreRep" class="info-input-addF"></div>
-                                <div class="subtitulo">Nombre de quien recibe: <input type="text" name="nombreRep" class="info-input-addR"></div>
+                                <div class="subtitulo">Descripción: <input type="text" name="descripcion" class="info-input"></div>
+                                <div class="subtitulo">Nombre de quien reporta: <input type="text" name="nombreReporte" class="info-input-addF"></div>
+                                <div class="subtitulo">Nombre de quien recibe: <input type="text" name="nombreRecibe" class="info-input-addR"></div>
                             </div>
                             <div class="botones">
                                 <button type="submit" class="confirmar">Agregar avería</button>
