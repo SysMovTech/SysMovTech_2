@@ -5,8 +5,8 @@
 			DELIMITER //
 			CREATE PROCEDURE Alta_Averia (
 				IN no_Pdc INT,
-                IN estacion TINYTEXT,
-                IN linea TINYTEXT,
+                IN estacion VARCHAR(3),
+                IN linea VARCHAR(4),
                 IN fecha DATE,
                 IN hora TIME,
                 IN descr TEXT,
@@ -60,14 +60,14 @@
 						SELECT 1
                         FROM RelLineaEstacion 
                         WHERE
-							id_Linea = (SELECT id_Linea FROM Lineas WHERE nom_Linea = linea) AND id_Estacion = (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion)
+							id_Linea = linea AND id_Estacion = estacion
                     ) THEN 
 						INSERT INTO RelLineaEstacion(id_Linea, id_Estacion)
-                        VALUES ((SELECT id_Linea FROM Lineas WHERE nom_Linea = linea), (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion));
+                        VALUES (linea, estacion);
 					END IF;
                     
                     INSERT INTO UbAveria(no_Averia, id_Rel_Linea_Estacion)
-                    VALUES (no_Pdc, (SELECT id_Rel_Linea_Estacion FROM RelLineaEstacion WHERE id_Linea = (SELECT id_Linea FROM Lineas WHERE nom_Linea = linea) AND id_Estacion = (SELECT id_Estacion FROM Estaciones WHERE nom_Estacion = estacion)));
+                    VALUES (no_Pdc, (SELECT id_Rel_Linea_Estacion FROM RelLineaEstacion WHERE id_Linea = linea AND id_Estacion = estacion));
 				END IF;
             END//
             DELIMITER ;
