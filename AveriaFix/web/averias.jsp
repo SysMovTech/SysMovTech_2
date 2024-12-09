@@ -1,3 +1,4 @@
+<%@page import="conexion.Base"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="estilos/mod.css"/>
     </head>
+    <%
+        HttpSession miSesion = request.getSession(false);
+
+        if (miSesion == null) {
+            response.sendRedirect("index.html");
+            return;
+        }
+
+    %>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const menuItems = document.querySelectorAll('.menu-item');
@@ -108,7 +118,12 @@
             </div>
 
 
-           <!-- aquí debería estaar eso de insertar n contenedores de acuerdo a la BD-->
+            <%Base bd = new Base();
+            
+            bd.conectar();
+
+
+            %>
             <div class="contenedor-scroll-avr">
                 <div class="fila-contenedores-avr">
                     <div class="contenedorveravr">
@@ -263,15 +278,15 @@
 
         <script>
 
-        const modal = document.getElementById('modal');
-        const modalContent = document.querySelector('.modal-content');
-        const contenedorVerAvr = document.querySelector('.contenedorveravr');
-        const originalModalContent = modalContent.innerHTML;
-        function restoreOriginalContent() {
-        modalContent.innerHTML = originalModalContent;
-        const button1Wrapper = document.getElementById('button1Wrapper');
-        button1Wrapper.addEventListener('click', () => {
-                modalContent.innerHTML = `
+            const modal = document.getElementById('modal');
+            const modalContent = document.querySelector('.modal-content');
+            const contenedorVerAvr = document.querySelector('.contenedorveravr');
+            const originalModalContent = modalContent.innerHTML;
+            function restoreOriginalContent() {
+                modalContent.innerHTML = originalModalContent;
+                const button1Wrapper = document.getElementById('button1Wrapper');
+                button1Wrapper.addEventListener('click', () => {
+                    modalContent.innerHTML = `
                 <div class="contenedor-scroll-avr-ver">
                 <div class="fila-contenedores-avr">
                     <div class="contenedorveravr-ver">
@@ -315,10 +330,10 @@
                 </div>
             </div>
 </div>`;
-});
-            const button2Wrapper = document.getElementById('button2Wrapper');
+                });
+                const button2Wrapper = document.getElementById('button2Wrapper');
                 button2Wrapper.addEventListener('click', () => {
-        modalContent.innerHTML = `
+                    modalContent.innerHTML = `
         <div class="contenedor-scroll-avr-edit">
             <div class="contenedor-mod-edit">
                 <div class="contenidoeditav">

@@ -21,6 +21,7 @@
         String nombreUsr = null;
         String rol = null;
         String info = null;
+        String rutaImg = null;
 
         if (miSesion != null) {
             idUsr = (Integer) miSesion.getAttribute("idUsr");
@@ -36,6 +37,7 @@
 
                 nombreUsr = rsInfoPerfil.getString("Nombre");
                 rol = rsInfoPerfil.getString("Rol");
+                rutaImg = rsInfoPerfil.getString("Imagen");
 
                 if (rol.equals("Administrador")) {
 
@@ -156,7 +158,7 @@
                         <input type="text" value="<%= rol%>" readonly class="info-input">   
                     </div>
                     <div class="derecha">
-                        <img src="recursos/tec b.png" alt="Perfil">
+                        <img src="<%= rutaImg%>" alt="Perfil">
                     </div>
                 </div>
                 <div class="subtituloABAJO">

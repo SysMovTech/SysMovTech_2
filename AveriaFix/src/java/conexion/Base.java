@@ -1,10 +1,6 @@
 package conexion;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.CallableStatement;
+import java.sql.*;
 
 /**
  * Guerra Monroy Ibrahim Grupo: 4IM7
@@ -126,4 +122,30 @@ public class Base {
         return rowsAffected;
     }
 
+    public int altaAveria(int noPdc, String lugar, Date fecha, Time hora, String descripcion, String nombreReporte, String nombreRecibe) throws SQLException {
+        if (this.conn == null || this.conn.isClosed()) {
+            throw new SQLException("No hay conexión a la base de datos.");
+        }
+
+        int rowsAffected = 0;
+
+        try (CallableStatement stmt = this.conn.prepareCall("{CALL Alta_Averia(?, ?, ?, ?, ?, ?, ?)}")) {
+            // Establecer los parámetros
+            stmt.setInt(1, noPdc);                    
+            stmt.setString(2, lugar);         
+            stmt.setDate(3, fecha);                   
+            stmt.setTime(4, hora);                    
+            stmt.setString(5, descripcion);           
+            stmt.setString(6, nombreReporte);         
+            stmt.setString(7, nombreRecibe);          
+
+            // Ejecutar el procedimiento
+            rowsAffected = stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new SQLException("Error al ejecutar el procedimiento almacenado Alta_Averia", e);
+        }
+
+        return rowsAffected;
+    }
 }
