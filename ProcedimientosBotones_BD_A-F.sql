@@ -297,7 +297,6 @@
                     UPDATE Usuario SET contrasena = pass_word 
 					WHERE no_Trabajador = numero;
 				ELSE IF (
-<<<<<<< HEAD
 						SELECT 1
 						FROM 
 							RelUsuario 
@@ -310,28 +309,12 @@
 						
 						UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
 						WHERE no_Trabajador = numero;
-					END IF;
-                END IF;
-=======
-					SELECT 1
-                    FROM
-						Usuario
-					WHERE
-						trabajador = no_Trabajador AND id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo = "Administrador")
-				) THEN
-					#Actualizamos nombre
-					UPDATE Usuario SET nombre = nombre_I 
-					WHERE no_Trabajador = numero;
-                    
-                    #Actualizamos contrasena
-                    UPDATE Usuario SET contrasena = pass_word 
-					WHERE no_Trabajador = numero;
-                    
-					UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
-                    WHERE no_Trabajador = numero;
+                        
+                        #Actualizamos sobre contraseña
+                        UPDATE Usario SET contrasena = pass_word
+                        WHERE no_Trabajador = numero;
 				END IF;
 			END IF;
->>>>>>> 682b919ba7d690fd5707ee93136ee7cce6dffeac
 			END//
 			DELIMITER ;
             
