@@ -14,6 +14,7 @@ public class Base {
     private Connection conn = null;
 
     public Base() {
+
         this.usrBD = "root";
         this.passBD = "n0m3l0";
         this.urlBD = "jdbc:mysql://127.0.0.1:3306/Averia_Fix";
@@ -128,17 +129,17 @@ public class Base {
 
         int rowsAffected = 0;
 
-        try (CallableStatement stmt = this.conn.prepareCall("{CALL Alta_Averia(?, ?, ?, ?, ?, ?, ?)}")) {
+        try (CallableStatement stmt = this.conn.prepareCall("{CALL Alta_Averia(?, ?, ?, ?, ?, ?, ?, ?)}")) {
             // Establecer los parámetros
-            stmt.setInt(1, noPdc);                    
-            stmt.setString(2, lugar);         
-            stmt.setDate(3, fecha);                   
-            stmt.setTime(4, hora);                    
-            stmt.setString(5, descripcion);           
-            stmt.setString(6, nombreReporte);         
-            stmt.setString(7, nombreRecibe);          
+            stmt.setInt(1, noPdc);
+            stmt.setString(2, lugar);
+            stmt.setDate(3, fecha);
+            stmt.setTime(4, hora);
+            stmt.setString(5, descripcion);
+            stmt.setString(6, nombreReporte);
+            stmt.setString(7, nombreRecibe);
 
-            // Ejecutar el procedimiento
+            // Ejecutar el procedimiento almacenado
             rowsAffected = stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
