@@ -79,7 +79,7 @@ public class Base {
             throw new SQLException("No hay conexión a la base de datos.");
         }
 
-        CallableStatement stmt = this.conn.prepareCall("{CALL Log_in(?, ?)}");
+        CallableStatement stmt = this.conn.prepareCall("{CALL Log_In(?, ?)}");
         stmt.setInt(1, no_user);
         stmt.setString(2, password);
 
@@ -115,7 +115,6 @@ public class Base {
 
             rowsAffected = stmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new SQLException("Error al ejecutar el procedimiento almacenado editar_Perfil", e);
         }
 

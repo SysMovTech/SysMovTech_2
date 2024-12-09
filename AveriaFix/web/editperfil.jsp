@@ -20,6 +20,7 @@
         Integer idUsr = null;
         String nombreUsr = null;
         String password = null;
+        String rutaImg = null;
 
         if (miSesion != null) {
 
@@ -35,6 +36,7 @@
             if (rsInfoPerfil.next()) {
 
                 nombreUsr = rsInfoPerfil.getString("Nombre");
+                rutaImg = rsInfoPerfil.getString("Imagen"); 
 
             }
         }
@@ -137,7 +139,7 @@
                         </div>
                         <div class="derecha">
                             <!-- acá va la cosa de la bd donde se recupera la dirección de la imagen ok -->
-                            <img src="recursos/tec b.png" alt="Perfil">
+                            <img src="<%= rutaImg%>" alt="Perfil">
                         </div>
                     </div>
                     <div class="botones">
