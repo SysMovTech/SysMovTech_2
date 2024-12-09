@@ -100,6 +100,21 @@ INSERT INTO IntervencionUbicacion VALUES
 ("EAGLT", "Armario 32U/G"),
 ("PLAT", "Platinas de Pupitres de TD");
 
+INSERT INTO Lineas VALUES
+("L-1", "Línea 1", "recursos/linea1.png"),
+("L-2", "Línea 2", "recursos/linea2.png"),
+("L-3", "Línea 3", "recursos/linea3.png"),
+("L-4", "Línea 4", "recursos/linea4.png"),
+("L-5", "Línea 5", "recursos/linea5.png"),
+("L-6", "Línea 6", "recursos/linea6.png"),
+("L-7", "Línea 7", "recursos/linea7.png"),
+("L-8", "Línea 8", "recursos/linea8.png"),
+("L-9", "Línea 9", "recursos/linea9.png"),
+("L-12", "Línea 12", "recursos/linea12.png"),
+("L-A", "Línea A", "recursos/lineaA.png"),
+("L-B", "Línea B", "recursos/lineaB.png");
+
+
 INSERT INTO TipoHorario VALUES
 (1, "Alta"),
 (2, "Baja");

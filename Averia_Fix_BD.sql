@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS Estaciones (
 );
 
 CREATE TABLE IF NOT EXISTS Lineas (
-	id_Linea VARCHAR(3) NOT NULL,
-    nom_Linea VARCHAR(8),
+	id_Linea VARCHAR(4) NOT NULL,
+    nom_Linea TINYTEXT,
     url_Imagen TEXT,
 		PRIMARY KEY (id_Linea)
 );
