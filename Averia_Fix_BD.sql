@@ -63,11 +63,8 @@ CREATE TABLE IF NOT EXISTS TipoAveria (
 );
 
 CREATE TABLE IF NOT EXISTS CodigoCausa (
-<<<<<<< HEAD
 	id_Codigo_Causa VARCHAR(6) NOT NULL,
-=======
 	id_Codigo_Causa VARCHAR(4) NOT NULL,
->>>>>>> 682b919ba7d690fd5707ee93136ee7cce6dffeac
     codigo_Causa TINYTEXT,
 		PRIMARY KEY (id_Codigo_Causa)
 );
@@ -79,11 +76,8 @@ CREATE TABLE IF NOT EXISTS Subsistema (
 );
 
 CREATE TABLE IF NOT EXISTS IntervencionUbicacion (
-<<<<<<< HEAD
 	id_Intervencion_Ubicacion VARCHAR(6) NOT NULL,
-=======
 	id_Intervencion_Ubicacion VARCHAR(4) NOT NULL,
->>>>>>> 682b919ba7d690fd5707ee93136ee7cce6dffeac
     intervencion_Ubicacion TINYTEXT,
 		PRIMARY KEY (id_Intervencion_Ubicacion)
 );
