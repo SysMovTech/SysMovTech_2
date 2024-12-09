@@ -156,7 +156,6 @@
                                             <option value="L-7">Línea 7</option>
                                             <option value="L-8">Línea 8</option>
                                             <option value="L-9">Línea 9</option>
-                                            <option value="L-10">Línea 10</option>
                                             <option value="L-A">Línea A</option>
                                             <option value="L-B">Línea B</option>
                                             <option value="L-12">Línea 12</option>
@@ -214,14 +213,79 @@
                     {value: "BRO", nombre: "Boulevard Puerto Aéreo"},
                     {value: "GRA", nombre: "Gomez Farías"},
                     {value: "ZZA", nombre: "Zaragoza"},
-                    {value: "PLA", nombre: "Pantitlán"},
+                    {value: "PLA", nombre: "Pantitlán"}
                 ],
                 "L-2": [
-                    {value: "C4C", nombre: "Cuatro Caminos"},
-                    {value: "TAC", nombre: "Tacuba"},
-                    {value: "HID", nombre: "Hidalgo"}
+                    {"value": "CSO", "nombre": "Cuatro Caminos"},
+                    {"value": "PNE", "nombre": "Panteones"},
+                    {"value": "TBA", "nombre": "Tacuba"},
+                    {"value": "CCA", "nombre": "Cuitláhuac"},
+                    {"value": "PLA", "nombre": "Popotla"},
+                    {"value": "CAR", "nombre": "Colegio Militar"},
+                    {"value": "NLA", "nombre": "Normal"},
+                    {"value": "RNO", "nombre": "Revolución"},
+                    {"value": "HGO", "nombre": "Hidalgo"},
+                    {"value": "BSE", "nombre": "Bellas Artes"},
+                    {"value": "ADE", "nombre": "Allende"},
+                    {"value": "ZLO", "nombre": "Zócalo"},
+                    {"value": "SDA", "nombre": "San Antonio Abad"},
+                    {"value": "CNO", "nombre": "Chabacano"},
+                    {"value": "VTO", "nombre": "Viaducto"},
+                    {"value": "XLA", "nombre": "Xola"},
+                    {"value": "VSE", "nombre": "Villa de Cortés"},
+                    {"value": "NSA", "nombre": "Nativitas"},
+                    {"value": "PLE", "nombre": "Portales"},
+                    {"value": "ETA", "nombre": "Ermita"},
+                    {"value": "GYA", "nombre": "General Anaya"},
+                    {"value": "TNA", "nombre": "Taxqueña"},
+                    {value: "PRE", nombre: "Pino Suárez"}
                 ],
                 "L-3": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-4": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-5": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-6": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-7": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-8": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-9": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-A": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-B": [
+                    {value: "IND", nombre: "Indios Verdes"},
+                    {value: "D18", nombre: "Deportivo 18 de Marzo"},
+                    {value: "BAL", nombre: "Balderas"}
+                ],
+                "L-12": [
                     {value: "IND", nombre: "Indios Verdes"},
                     {value: "D18", nombre: "Deportivo 18 de Marzo"},
                     {value: "BAL", nombre: "Balderas"}
@@ -237,8 +301,8 @@
                 if (estacionesPorLinea[lineaSeleccionada]) {
                     estacionesPorLinea[lineaSeleccionada].forEach(estacion => {
                         const opcion = document.createElement("option");
-                        opcion.value = estacion.value; 
-                        opcion.textContent = estacion.nombre; 
+                        opcion.value = estacion.value;
+                        opcion.textContent = estacion.nombre;
                         estacionesSelect.appendChild(opcion);
                     });
                 }
