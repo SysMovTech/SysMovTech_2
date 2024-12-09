@@ -78,8 +78,8 @@ INSERT INTO TipoReporte VALUES
 (1, "Alta"),
 (2, "Baja");
 
-CALL Log_In(2023090307, "2023090307.");
-CALL info_Perfil(2023090307, "IG$1234");
+CALL Log_In(2023090307, "IG$1234");
+CALL info_Perfil(2023090307, "2023090307.");
 CALL editar_Perfil(2023090307, "2023090307.", "IG$1234");
 
 select * from Usuario;

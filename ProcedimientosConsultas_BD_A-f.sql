@@ -27,6 +27,7 @@
 		DELIMITER ;
 
 	#Info de perfil
+    #drop procedure info_Perfil;
 		DELIMITER // 
 			CREATE PROCEDURE info_Perfil (IN no_Trabajador INT, contrasena VARCHAR(15)) 
 			BEGIN 
@@ -39,7 +40,7 @@
 				FROM 
 					Usuario U 
 				JOIN 
-					RelUsuarioTipo RUT ON U.no_Trabajador = RUT.no_Trabajador
+					RelUsrTipo RUT ON U.no_Trabajador = RUT.no_Trabajador
 				JOIN 
 					TipoUsuarios TU ON RUT.id_Tipo_Usr = TU.id_Tipo_Usr
 				JOIN 
@@ -424,7 +425,7 @@
 
 		#Info Basica de averias resueltas de los ultimos 6 meses
 			DELIMITER //
-				CREATE PROCEDURE info_B_1MRes(IN num_Averia INT)
+				CREATE PROCEDURE info_B_6MRes(IN num_Averia INT)
 				BEGIN
 					SELECT 
 						A.descripcion AS Descripcion_Averia,

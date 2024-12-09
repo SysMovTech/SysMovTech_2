@@ -274,6 +274,7 @@
 			DELIMITER ;
             
             #Editar un trabajador
+            #drop procedure Editar_Trabajador;
             DELIMITER //
             CREATE PROCEDURE Editar_Trabajador (
 				IN nombre_I TINYTEXT,
@@ -299,7 +300,13 @@
                     #Actualizamos contrasena
                     UPDATE Usuario SET contrasena = pass_word 
 					WHERE no_Trabajador = numero;
-				ELSE 
+				ELSE IF (
+					SELECT 1
+                    FROM
+						Usuario
+					WHERE
+						trabajador = no_Trabajador AND id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo = "Administrador")
+				) THEN
 					#Actualizamos nombre
 					UPDATE Usuario SET nombre = nombre_I 
 					WHERE no_Trabajador = numero;
@@ -311,10 +318,12 @@
 					UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
                     WHERE no_Trabajador = numero;
 				END IF;
+			END IF;
 			END//
 			DELIMITER ;
             
         #Log In
+        #drop procedure Log_in;
 			DELIMITER //
 			CREATE PROCEDURE Log_In(IN no_User INT, IN pass_word VARCHAR(15))
 			BEGIN
@@ -338,7 +347,31 @@
 					E.estado = 'Activo';
 			 
 				IF trabajador IS NOT NULL THEN
-					SET @no_Trabajador = trabajador;  
+					SET @no_Trabajador = trabajador;
+                    SET @contrasenia = pass_word;
 				END IF;
+                
+                select @no_Trabajador, @contrasenia;
 			END//
 			DELIMITER ;
+            
+DELIMITER //
+
+CREATE PROCEDURE editar_Perfil(IN p_no_Trabajador INT, IN p_contrasena_antigua VARCHAR(15), IN p_contrasena_nueva VARCHAR(15))
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM Usuario
+        WHERE no_Trabajador = p_no_Trabajador
+          AND contrasena = p_contrasena_antigua
+    ) THEN
+        UPDATE Usuario
+        SET contrasena = p_contrasena_nueva
+        WHERE no_Trabajador = p_no_Trabajador;
+    END IF;
+END //
+
+DELIMITER ;
+
+
+DELIMITER ;
