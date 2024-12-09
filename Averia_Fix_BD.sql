@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS Observacion (
 );
 
 CREATE TABLE IF NOT EXISTS Horario (
-	id_Horario INT NOT NULL,
+	id_Horario INT NOT NULL AUTO_INCREMENT,
     horario DATETIME,
 		PRIMARY KEY (id_Horario)
 );
