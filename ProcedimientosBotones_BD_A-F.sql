@@ -345,9 +345,9 @@
 				IF trabajador IS NOT NULL THEN
 					SET @no_Trabajador = trabajador;
                     SET @contrasenia = pass_word;
+                                    
+                SELECT @no_Trabajador, @contrasenia;
 				END IF;
-                
-                select @no_Trabajador, @contrasenia;
 			END//
 			DELIMITER ;
             
