@@ -5,7 +5,7 @@ INSERT INTO TipoUsuarios VALUES
 (2, "Supervisor", "recursos/sup b.png"),
 (3, "Tecnico", "recursos/tec b.png");
 
-INSERT  Estado VALUES 
+INSERT INTO Estado VALUES 
 (1, "Activo"),
 (2, "Inactivo");
 

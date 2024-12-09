@@ -1,4 +1,4 @@
- create database Averia_Fix;
+create database Averia_Fix;
 use Averia_Fix;
 
 #TABLAS PRINCIPALES
