@@ -17,9 +17,8 @@ CREATE TABLE IF NOT EXISTS Averia (
 );
 
 CREATE TABLE IF NOT EXISTS Observacion (
-	id_Observacion INT NOT NULL,
+	id_Observacion INT NOT NULL auto_increment,
     descripcion TEXT,
-    fecha DATE,
 		PRIMARY KEY(id_Observacion)
 );
 
@@ -148,6 +147,7 @@ CREATE TABLE IF NOT EXISTS Calificacion (
     id_Tipo_Averia VARCHAR(2),
     id_Codigo_Causa VARCHAR(2),
     id_Intervencion_Ubicacion VARCHAR(2),
+    id_Linea VARCHAR(3),
 		PRIMARY KEY (id_Calificacion),
 		FOREIGN KEY (id_Subsistema) 
 			REFERENCES Subsistema(id_Subsistema),
@@ -156,7 +156,9 @@ CREATE TABLE IF NOT EXISTS Calificacion (
         FOREIGN KEY (id_Codigo_Causa) 
 			REFERENCES CodigoCausa(id_Codigo_Causa),
         FOREIGN KEY (id_Intervencion_Ubicacion) 
-			REFERENCES IntervencionUbicacion(id_Intervencion_Ubicacion)
+			REFERENCES IntervencionUbicacion(id_Intervencion_Ubicacion),
+		FOREIGN KEY (id_Linea) 
+			REFERENCES Lineas(id_Linea)
 );
 
 CREATE TABLE IF NOT EXISTS RelCalAveria (
@@ -200,6 +202,20 @@ CREATE TABLE IF NOT EXISTS RelHorarioAveria (
 		PRIMARY KEY (id_Rel_Horario_Averia),
         FOREIGN KEY (no_Averia) 
 			REFERENCES Averia(no_Averia),
+		FOREIGN KEY (id_Tipo_Horario) 
+			REFERENCES TipoHorario(id_Tipo_Horario),
+		FOREIGN KEY (id_Horario) 
+			REFERENCES Horario(id_Horario)
+);
+
+CREATE TABLE IF NOT EXISTS RelHorarioObs (
+	id_Rel_Horario_Obs INT NOT NULL auto_increment,
+    id_Observacion INT,
+    id_Tipo_Horario INT,
+    id_Horario INT,
+		PRIMARY KEY (id_Rel_Horario_Averia),
+        FOREIGN KEY (no_Observacion) 
+			REFERENCES Observacion(id_Observacion),
 		FOREIGN KEY (id_Tipo_Horario) 
 			REFERENCES TipoHorario(id_Tipo_Horario),
 		FOREIGN KEY (id_Horario) 
@@ -261,14 +277,5 @@ CREATE TABLE IF NOT EXISTS RelEstadoAveria (
 			REFERENCES Averia(no_Averia)
 );
 
-CREATE TABLE IF NOT EXISTS RelCalLinea (
-	id_Rel_Cal_Linea INT NOT NULL,
-    id_Calificacion VARCHAR(7),
-    id_Linea VARCHAR(3),
-		PRIMARY KEY (id_Rel_Cal_Linea),
-        FOREIGN KEY (id_Calificacion) 
-			REFERENCES Calificacion(id_Calificacion),
-		FOREIGN KEY (id_Linea) 
-			REFERENCES Lineas(id_Linea)
-);
+
 
