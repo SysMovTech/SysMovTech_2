@@ -296,11 +296,7 @@
                     #Actualizamos contrasena
                     UPDATE Usuario SET contrasena = pass_word 
 					WHERE no_Trabajador = numero;
-<<<<<<< HEAD
-				ELSEIF (
-=======
 				ELSE IF (
->>>>>>> b2b24ab80ec306b7111b844367d02fb13209f7f2
 						SELECT 1
 						FROM 
 							RelUsuario 
@@ -313,9 +309,7 @@
 						
 						UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
 						WHERE no_Trabajador = numero;
-<<<<<<< HEAD
-					END IF;
-                END IF;
+                IF (
                 
 					SELECT 1
                     FROM
@@ -333,15 +327,12 @@
                     
 					UPDATE RelUsrTipo SET id_Tipo_U = (SELECT id_Tipo_U FROM TipoUsuarios WHERE tipo_Usr = rol)
                     WHERE no_Trabajador = numero;
-=======
-                        
                         #Actualizamos sobre contraseña
                         UPDATE Usario SET contrasena = pass_word
                         WHERE no_Trabajador = numero;
->>>>>>> b2b24ab80ec306b7111b844367d02fb13209f7f2
 				END IF;
 			END IF;
-			END//
+		END;
 			DELIMITER ;
             
         #Log In
