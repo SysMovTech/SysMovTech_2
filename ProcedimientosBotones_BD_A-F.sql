@@ -69,7 +69,10 @@
                     INSERT INTO UbAveria(no_Averia, id_Rel_Linea_Estacion)
                     VALUES (no_Pdc, (SELECT id_Rel_Linea_Estacion FROM RelLineaEstacion WHERE id_Linea = linea AND id_Estacion = estacion));
                     
-                    SELECT "Insercion Exitosa" AS Mensaje;
+                    SET @mensaje = "Insercion Exitosa";
+                    SET @no_Incersion = no_Pdc;
+                    
+                    SELECT @mensaje, @no_Incersion;
 				END IF;
             END//
             DELIMITER ;
