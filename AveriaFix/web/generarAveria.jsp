@@ -64,9 +64,8 @@
 
                 }
             } catch (Exception e) {
-                response.sendRedirect("anadirav.jsp");
+                response.sendRedirect("notificaciones.jsp");
             }
-        }
     %>
     <body>
     </body>

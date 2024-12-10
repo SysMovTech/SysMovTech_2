@@ -127,7 +127,7 @@ public class Base {
             throw new SQLException("No hay conexión a la base de datos.");
         }
 
-        CallableStatement stmt = this.conn.prepareCall("{CALL Alta_Averia(?, ?, ?, ?, ?, ?, ?, ?, ?)}");
+        CallableStatement stmt = this.conn.prepareCall("{CALL Alta_Averia(?, ?, ?, ?, ?, ?, ?, ?)}");
 
         // Establecer los parámetros de entrada
         stmt.setInt(1, noPdc);
