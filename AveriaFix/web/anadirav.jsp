@@ -145,7 +145,7 @@
                                 </div>
                                 <div class="right-column">
                                     <div class="campocolumna">Linea: 
-                                        <select name="rol" id="linea" class="info-input-add" onchange="actualizarEstaciones()">
+                                        <select name="linea" id="linea" class="info-input-add" onchange="actualizarEstaciones()">
                                             <option value="" disabled selected>Seleccione la línea</option>
                                             <option value="L-1">Línea 1</option>
                                             <option value="L-2">Línea 2</option>

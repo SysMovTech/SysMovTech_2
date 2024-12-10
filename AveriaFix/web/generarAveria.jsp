@@ -12,7 +12,7 @@
            <%
             // Obtener los parámetros del formulario
             String noPdcStr = request.getParameter("pdc");
-            String linea = request.getParameter("rol");
+            String linea = request.getParameter("linea");
             String estacion = request.getParameter("estacion");
             String fechaStr = request.getParameter("fecha");
             String horaStr = request.getParameter("hora");
