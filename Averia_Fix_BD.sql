@@ -234,7 +234,7 @@ CREATE TABLE IF NOT EXISTS RelLineaEstacion (
 );
 
 CREATE TABLE IF NOT EXISTS UbAveria (
-	id_Ub_Averia INT NOT NULL,
+	id_Ub_Averia INT NOT NULL AUTO_INCREMENT,
     no_Averia INT,
     id_Rel_Linea_Estacion VARCHAR(8),
 		PRIMARY KEY (id_Ub_Averia),

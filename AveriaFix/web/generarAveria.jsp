@@ -1,15 +1,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.Date" %>
 <%@ page import="java.sql.Time" %>
+<%@ page import="java.sql.ResultSet"%>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="conexion.Base" %>
+<%@ page import="conexion.Base"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Procesar Avería</title>
     </head>
-           <%
+    <%
             // Obtener los parámetros del formulario
             String noPdcStr = request.getParameter("pdc");
             String linea = request.getParameter("linea");
@@ -19,8 +20,6 @@
             String descripcion = request.getParameter("descripcion");
             String nombreReporte = request.getParameter("nombreReporte");
             String nombreRecibe = request.getParameter("nombreRecibe");
-            
-
 
             // Validar que los parámetros no sean nulos o vacíos
             if (noPdcStr == null || linea == null || estacion == null || fechaStr == null || horaStr == null
@@ -40,63 +39,35 @@
                 return;
             }
 
+            // Convertir parámetros a los tipos requeridos
+            int noPdc = Integer.parseInt(noPdcStr);
+            Date fecha = Date.valueOf(fechaStr);
+
+            // Si la hora está en formato "HH:mm", añadir ":00"
+            if (horaStr.length() == 5) {
+                horaStr += ":00";
+            }
+            Time hora = Time.valueOf(horaStr);
+
             try {
-                // Convertir parámetros a los tipos requeridos
-                int noPdc = Integer.parseInt(noPdcStr);
-                Date fecha = Date.valueOf(fechaStr);
-                
-
-                // Si la hora está en formato "HH:mm", añadir ":00"
-                if (horaStr.length() == 5) {
-                    horaStr += ":00";
-                }
-                Time hora = Time.valueOf(horaStr);
-
-                // Conectar con la base de datos
+                // Código que puede lanzar excepciones
                 Base bd = new Base();
                 bd.conectar();
 
-                // Llamar al procedimiento almacenado
-                int rowsAffected = bd.altaAveria(noPdc, linea, estacion, fecha, hora, descripcion, nombreReporte, nombreRecibe);
+                ResultSet rsAgregarAveria = bd.altaAveria(noPdc, estacion, linea, fecha, hora, descripcion, nombreReporte, nombreRecibe);
 
-                // Verificar si se realizó alguna inserción
-                if (rowsAffected > 0) {
-                    response.sendRedirect("notificaciones.jsp");
-                } else {
-                    out.println("Error: No se pudo registrar la avería.");
-                    //response.sendRedirect("anadirav.jsp");
+                if (rsAgregarAveria.next()) {
+
+                    if (rsAgregarAveria.getString("@mensaje").equals("Insercion Exitosa") && rsAgregarAveria.getString("@no_Insercion").equals(noPdc)) {
+                        response.sendRedirect("notificaciones.jsp");
+                    }
+
                 }
-            } catch (NumberFormatException e) {
-                out.println("Error: Formato inválido en los campos numéricos o de fecha.");
-                e.printStackTrace();
-                //response.sendRedirect("anadirav.jsp");
-            } catch (SQLException e) {
-                out.println("Error: Problema con la base de datos. " + e.getMessage());
-                out.println(noPdcStr);
-                out.println(estacion);
-                out.println(linea);
-                out.println(fechaStr);
-                out.println(horaStr);
-                out.println(descripcion);
-                out.println(nombreReporte);
-                out.println(nombreRecibe);
-                
-                e.printStackTrace();
-                //response.sendRedirect("anadirav.jsp");
+            } catch (Exception e) {
+                response.sendRedirect("anadirav.jsp");
             }
-        %>
+        }
+    %>
     <body>
- 
-        
-        <%
-            out.println(noPdcStr);
-            out.println(estacion);
-            out.println(linea);
-            out.println(fechaStr);
-            out.println(horaStr);
-            out.println(descripcion);
-            out.println(nombreReporte);
-            out.println(nombreRecibe);
-        %>
     </body>
 </html>

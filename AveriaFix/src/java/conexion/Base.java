@@ -122,31 +122,24 @@ public class Base {
         return rowsAffected;
     }
 
-    public int altaAveria(int noPdc, String estacion, String linea, Date fecha, Time hora, String descripcion, String nombreReporte, String nombreRecibe) throws SQLException {
+    public ResultSet altaAveria(int noPdc, String estacion, String linea, Date fecha, Time hora, String descripcion, String idUsrReporte, String idUsrRecibe) throws SQLException {
         if (this.conn == null || this.conn.isClosed()) {
             throw new SQLException("No hay conexión a la base de datos.");
         }
 
-        int rowsAffected = 0;
+        CallableStatement stmt = this.conn.prepareCall("{CALL Alta_Averia(?, ?, ?, ?, ?, ?, ?, ?, ?)}");
 
-        try (CallableStatement stmt = this.conn.prepareCall("{CALL Alta_Averia(?, ?, ?, ?, ?, ?, ?, ?)}")) {
-            // Establecer los parámetros
-            stmt.setInt(1, noPdc);
-            stmt.setString(2, estacion);
-            stmt.setString(2, linea);
-            stmt.setDate(3, fecha);
-            stmt.setTime(4, hora);
-            stmt.setString(5, descripcion);
-            stmt.setString(6, nombreReporte);
-            stmt.setString(7, nombreRecibe);
+        // Establecer los parámetros de entrada
+        stmt.setInt(1, noPdc);
+        stmt.setString(2, estacion);
+        stmt.setString(3, linea);
+        stmt.setDate(4, fecha);
+        stmt.setTime(5, hora);
+        stmt.setString(6, descripcion);
+        stmt.setString(7, idUsrReporte);
+        stmt.setString(8, idUsrRecibe);
 
-            // Ejecutar el procedimiento almacenado
-            rowsAffected = stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new SQLException("Error al ejecutar el procedimiento almacenado Alta_Averia", e);
-        }
-
-        return rowsAffected;
+    
+        return stmt.executeQuery();
     }
 }

@@ -174,5 +174,8 @@ select * from Usuario;
 select * from Horario;
 select *from Averia;
 
-CALL Alta_Averia (1, "CPE", "L-1", "2024-12-09", "19:28:00", "Prueba", "Said Guerra", "Ibrahim Guerra");
-CALL Alta_Averia (2, "CPE", "L-1", "2024-12-09", "19:28:00", "Prueba", "Said Guerra", "Ibrahim Guerra");
+CALL Alta_Averia (1, "CPE", "L-1", "2024-12-09", "19:28:00", "Prueba", "2023090308", "2023090307");
+CALL Alta_Averia (2, "CPE", "L-1", "2024-12-09", "19:28:00", "Prueba", "2023090308", "2023090307");
+CALL Alta_Averia (3, "ITE", "L-1", "2024-12-09", "20:37:00", "PRUEBA C", "2023090308", "2023090307");
+CALL Alta_Averia (4, "SGA", "L-1", "2024-12-09", "20:45:00", "PRUEBA D", "2023090308", "2023090307");
+        
