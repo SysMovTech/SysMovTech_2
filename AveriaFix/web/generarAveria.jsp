@@ -58,13 +58,13 @@
 
                 if (rsAgregarAveria.next()) {
 
-                    if (rsAgregarAveria.getString("@mensaje").equals("Insercion Exitosa") && rsAgregarAveria.getString("@no_Insercion").equals(noPdc)) {
+                    if ("Insercion Exitosa".equals(rsAgregarAveria.getString("@mensaje")) && noPdcStr.equals(rsAgregarAveria.getString("@no_Insercion"))) {
                         response.sendRedirect("notificaciones.jsp");
                     }
 
                 }
             } catch (Exception e) {
-                response.sendRedirect("notificaciones.jsp");
+                response.sendRedirect("anadirav.jsp");
             }
     %>
     <body>
