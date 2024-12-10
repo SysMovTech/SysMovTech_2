@@ -10,8 +10,8 @@
                 IN fecha DATE,
                 IN hora TIME,
                 IN descr TEXT,
-                IN nombre_Reporte TINYTEXT,
-                IN nombre_Recibe TINYTEXT
+                IN id_Usr_Reporte TINYTEXT,
+                IN id_Usr_Recibe TINYTEXT
             )
             BEGIN
             
@@ -50,11 +50,11 @@
 					
                     #nombre del que reporta
 					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
-                    VALUES(nombre_Reporte, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Reporta'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
+                    VALUES(id_Usr_Reporte, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Reporta'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
                     
                     #nombre del que recibe
 					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
-                    VALUES(nombre_Recibe, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Recibe'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
+                    VALUES(id_Usr_Recibe, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Recibe'), (SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Alta') );
                     
                     IF NOT EXISTS (
 						SELECT 1
@@ -68,10 +68,11 @@
                     
                     INSERT INTO UbAveria(no_Averia, id_Rel_Linea_Estacion)
                     VALUES (no_Pdc, (SELECT id_Rel_Linea_Estacion FROM RelLineaEstacion WHERE id_Linea = linea AND id_Estacion = estacion));
+                    
+                    SELECT "Insercion Exitosa" AS Mensaje;
 				END IF;
             END//
             DELIMITER ;
-
 		
 		#Editar una avería 	
 			DELIMITER //
@@ -383,8 +384,5 @@ BEGIN
         WHERE no_Trabajador = p_no_Trabajador;
     END IF;
 END //
-
-DELIMITER ;
-
 
 DELIMITER ;

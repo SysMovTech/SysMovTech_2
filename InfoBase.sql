@@ -168,6 +168,8 @@ INSERT INTO TipoReporte VALUES
 CALL Log_In(2023090307, "IG$1234");
 CALL info_Perfil(2023090307, "2023090307.");
 CALL editar_Perfil(2023090307, "2023090307.", "IG$1234");
+CALL Alta_Averia (1, "CPE", "L-1", "2024-12-09", "19:28:00", "Prueba", "2023090308", "2023090307");
+CALL Alta_Averia (2, "CPE", "L-1", "2024-12-09", "19:28:00", "Prueba", "2023090308", "2023090307");
 
 select * from Usuario;
 select * from Horario;

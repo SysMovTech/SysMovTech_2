@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS RelUsrTipo (
 );
 
 CREATE TABLE IF NOT EXISTS RelUsrAveria (
-	id_Rel_Usr_Averia INT NOT NULL,
+	id_Rel_Usr_Averia INT NOT NULL AUTO_INCREMENT,
     no_Trabajador INT,
     no_Averia INT,
     id_Rol_Reporte INT,
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS RelObsAveria (
 );
 
 CREATE TABLE IF NOT EXISTS RelHorarioAveria (
-	id_Rel_Horario_Averia INT NOT NULL,
+	id_Rel_Horario_Averia INT NOT NULL AUTO_INCREMENT,
     no_Averia INT,
     id_Tipo_Horario INT,
     id_Horario INT,
@@ -234,7 +234,7 @@ CREATE TABLE IF NOT EXISTS RelLineaEstacion (
 );
 
 CREATE TABLE IF NOT EXISTS UbAveria (
-	id_Ub_Averia INT NOT NULL,
+	id_Ub_Averia INT NOT NULL AUTO_INCREMENT,
     no_Averia INT,
     id_Rel_Linea_Estacion VARCHAR(8),
 		PRIMARY KEY (id_Ub_Averia),
