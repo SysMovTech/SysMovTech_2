@@ -224,7 +224,7 @@ CREATE TABLE IF NOT EXISTS RelHorarioObs (
 
 CREATE TABLE IF NOT EXISTS RelLineaEstacion (
 	id_Rel_Linea_Estacion VARCHAR(8) NOT NULL,
-    id_Linea VARCHAR(3),
+    id_Linea VARCHAR(4),
     id_Estacion VARCHAR(3),
 		PRIMARY KEY (id_Rel_Linea_Estacion),
         FOREIGN KEY (id_Linea) 
