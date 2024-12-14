@@ -1,0 +1,116 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    display: flex;
+}
+
+.vertical-menu {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #dbdbdb;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-top: 14px;
+}
+
+.logo {
+    height: 70px;
+    margin-right: 10px;
+}
+
+.empresa {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.icon {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.menu-item.active {
+    background-color: #000000;
+    color: #fff;
+}
+
+.menu-item.notificaciones.active .icon {
+    content: url('recursos/campana w.png');
+}
+
+.menu-item.averias.active .icon {
+    content: url('recursos/averia w.png');
+}
+
+.menu-item.trabajadores.active .icon {
+    content: url('recursos/trabW.PNG');
+}
+
+.menu-item.perfil.active .icon {
+    content: url('recursos/per w.png');
+}
+
+.menu-item:hover {
+    background-color: #999999;
+    transform: scale(1.05);
+}
+
+.menu-item:active {
+    transform: scale(0.95);
+}
+
+.menu-item span {
+    flex-grow: 1;
+}
+
+.menu-item.active {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logout-section {
+    margin-top: auto;
+    padding: 15px 0;
+}
+
+.logout-link {
+    color: #aaa; /* Color gris claro */
+    font-size: 14px;
+    text-decoration: none; /* Quitar subrayado */
+    transition: color 0.3s ease;
+}
+
+.logout-link:hover {
+    color: #000000; /* Color gris ligeramente más oscuro al pasar el mouse */
+}
