@@ -1,0 +1,249 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease; 
+}
+
+.modal-content {
+    width: auto;
+    max-width: 900px;
+    height: auto; 
+    max-height: 700px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease; 
+
+}
+
+.modal-button {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.2s ease; 
+}
+
+.modal-button:hover {
+    transform: scale(1.1); 
+}
+
+.contenedorveravr {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contenedorveravr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content.active {
+    transform: scale(1);
+}
+
+.modal-button-container {
+    display: flex;
+    align-items: initial;
+    gap: 10px; 
+}
+
+.modal-button-text {
+    font-size: 14px; 
+    margin: 0; 
+}
+
+.modal-button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    transition: background-color 0.2s ease; 
+}
+
+.modal-button-wrapper:hover {
+    background-color: #cccccc; 
+    border-radius: 20px;
+}
+
+.modal-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.modal-text {
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-content {
+    min-width: 50%;
+    width: auto;
+    max-width: 9000px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.titulo-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.contenedor-scroll-avr-ver {
+    display: flex;
+    flex-direction: column;
+    max-height: 620px;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.contenedor-scroll-avr-ver::-webkit-scrollbar {
+    display: none;
+}
+
+.contenedorveravr-ver{
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    padding: 30px;
+    flex-grow: 1;
+    margin-top: 10px;
+    height: 95%;
+    width: 100%;
+}
+
+.contenedor-mod {
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    padding: 30px;
+    flex-grow: 1;
+    margin-top: 10px;
+    width: 800%;
+}
+
+.contenedor-scroll-avr-edit {
+    display: flex;
+    flex-direction: column;
+    max-height: 900px;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.contenedor-mod-edit {
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    padding: 30px;
+    flex-grow: 1;
+    margin-top: 10px;
+    width: 100%;
+    min-height: 900px;
+    height: auto;
+}
+
+.contenidoeditav {
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+}
+
+.contenedor-scroll-avr-print {
+    display: flex;
+    flex-direction: column;
+    max-height: 620px;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+
+.contenedorveravr-print{
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    padding: 30px;
+    flex-grow: 1;
+    margin-top: 10px;
+    height: 95%;
+    width: 100%;
+}
+
+.botonesEstado {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    transition: background-color 0.3s ease;
+    gap: 70px;
+
+}
+
+.activa{
+    background-color: #cc0000;
+    border-radius: 40px;
+    border: none;
+    padding: 10px 10px;
+    margin-right: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 160px;
+}
+
+.resuelta{
+    background-color: #009900;
+    border-radius: 40px;
+    border: none;
+    padding: 10px 10px;
+    margin-right: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 160px;
+}
+
+.botonesEstado .activa:hover, .botonesEstado .resuelta:hover {
+    background-color: #666666;
+    transform: scale(1.05);
+}
+
+.botonesEstado .confirmar:hover, .botonesEstado .cancelar:hover {
+    background-color: #999999;
+    transform: scale(1.05);
+}
+
