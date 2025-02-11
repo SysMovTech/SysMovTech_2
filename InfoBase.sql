@@ -259,7 +259,7 @@ INSERT INTO Estaciones VALUES
 ("MRA","Martín Carrera","recursos/martinCarrera.png"),
 ("TAN","Talisman","recursos/talisman.png"),
 ("BTO","Bondojito","recursos/bondojito.png"),
-("CDO","Consulado","recursos/consulador.png"),
+("CDO","Consulado","recursos/consulado.png"),
 ("CTE","Canal del Norte","recursos/canalNorte.png"),
 ("MSO","Morelos","recursos/morelos.png"), 
 ("FDO","Fray Servando","recursos/frayServando.png"),
@@ -426,7 +426,7 @@ INSERT INTO Estaciones VALUES
 ("OVO","Olivos","recursos/olivos.png"),
 ("NRA","Nopalera","recursos/nopalera.png"),
 ("ZAN","Zapotitlan","recursos/zapotitlan.png"),
-("TGO","Tlaltengo","recursos/tlaltengo.png"),
+("TGO","Tlaltengo","recursos/tlaltenco.png"),
 ("TAC","Tlahuac","recursos/tlahuac.png");
 
 #REL L-12
@@ -476,7 +476,7 @@ INSERT INTO RelLineaEstacion VALUES
 #Inserciones de la L-B (omitimos Oceania(L-5), San Lazaro(L-1), Morelos(L-4), Garibaldi(L-8), Guerrero(L-3) )
 INSERT INTO Estaciones VALUES 
 ("CAZ","Ciudad Azteca","recursos/ciudadAzteca.png"),
-("PON","Plaza Aragón","recursos/p.png"),
+("PON","Plaza Aragón","recursos/plazaAragon.png"),
 ("OCA","Olímpica","recursos/olimpica.png"),
 ("MIZ","Múzquiz","recursos/muzquiz.png"),
 ("RIO","Río de los remedios","recursos/rioRemedios.png"),
