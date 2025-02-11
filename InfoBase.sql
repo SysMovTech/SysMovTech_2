@@ -154,7 +154,7 @@ INSERT INTO RelLineaEstacion VALUES
 ("L-1-MMA","L-1","MMA"),
 ("L-1-BNA","L-1","BNA"),
 ("L-1-ZZA","L-1","ZZA"),
-("L-1-PLA","L-1","PLA");
+("L-1-PNA","L-1","PNA");
 
 #Inserciones de L-2 (omitimos Pino Suárez)
 INSERT INTO Estaciones VALUES 
