@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS RelCalAveria (
 );
 
 CREATE TABLE IF NOT EXISTS RelObsUsr (
-	id_Rel_Obs_Usr INT NOT NULL,
+	id_Rel_Obs_Usr INT NOT NULL auto_increment,
     no_Trabajador INT,
     id_Observacion INT,
 		PRIMARY KEY (id_Rel_Obs_Usr),
@@ -184,15 +184,22 @@ CREATE TABLE IF NOT EXISTS RelObsUsr (
 );
 
 CREATE TABLE IF NOT EXISTS RelObsAveria (
-	id_Rel_Obs_Averia INT NOT NULL,
+	id_Rel_Obs_Averia INT NOT NULL auto_increment,
     no_Averia INT,
     id_Observacion INT,
+    id_Tipo_Horario INT, 
+    id_Horario INT,
 		PRIMARY KEY (id_Rel_Obs_Averia),
         FOREIGN KEY (no_Averia) 
 			REFERENCES Averia(no_Averia),
 		FOREIGN KEY (id_Observacion) 
-			REFERENCES Observacion(id_Observacion)
+			REFERENCES Observacion(id_Observacion),
+		FOREIGN KEY (id_Tipo_Horario) 
+			REFERENCES TipoHorario(id_Tipo_Horario),
+		FOREIGN KEY (id_Horario) 
+			REFERENCES Horario(id_Horario)
 );
+
 
 CREATE TABLE IF NOT EXISTS RelHorarioAveria (
 	id_Rel_Horario_Averia INT NOT NULL AUTO_INCREMENT,

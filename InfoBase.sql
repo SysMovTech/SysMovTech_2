@@ -1,5 +1,9 @@
 #drop database averia_fix;
 
+INSERT INTO TipoHorario VALUE (3, "Observación");
+    
+    SELECT * FROM TipoHorario;
+
 INSERT INTO TipoUsuarios VALUES
 (1, "Administrador", "recursos/sup b.png"),
 (2, "Supervisor", "recursos/sup b.png"),

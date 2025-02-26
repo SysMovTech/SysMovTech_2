@@ -78,6 +78,7 @@
             DELIMITER ;
 		
 		#Editar una avería 	
+        #drop procedure Editar_Averia;
 			DELIMITER //
 			CREATE PROCEDURE Editar_Averia (
 				IN no_Pdc INT,
@@ -127,19 +128,34 @@
                 END IF;
                 
                 #Vinculamos la observación con la Averia
-				INSERT INTO RelObsAveria (no_Averia, id_Observacion)
-				VALUES (no_Pdc,(SELECT id_Observacion FROM Observacion WHERE descripcion = descr_O));
+				INSERT INTO RelObsAveria (no_Averia, id_Observacion, id_Tipo_Horario, id_Horario)
+				VALUES (no_Pdc,(SELECT id_Observacion FROM Observacion WHERE descripcion = descr_O),(SELECT id_Tipo_Horario FROM TipoHorario WHERE tipo_Horario = 'Observación'), var_id);
 				
 				#nombre del que observa
 				INSERT INTO RelObsUsr (no_Trabajador, id_Observacion)
 				VALUES((SELECT no_Trabajador FROM Usuario WHERE nombre = nombre_O),(SELECT id_Observacion FROM Observacion WHERE descripcion = descr_O) );
 				
-                #Horario con Obs
-					INSERT INTO RelHorarioObs (id_Observacion, id_Tipo_Horario, id_Horario)
-                    VALUES ((SELECT id_Observacion FROM Observacion WHERE descripcion = descr_O), (SELECT id_Tipo_Horario FROM TipoHorario WHERE tipo_Horario = 'Observacion'), var_id);
-                
 			END//
 			DELIMITER ;
+           
+           
+            CALL Editar_Averia (1, '2025-02-25' , '11:04:55', "Prueba de observación 1","Ibrahim Guerra");
+            
+            #drop procedure Editar_Averia;
+            #Este puede ser el código de la consulta que despliegue las observaciones de C/Averia
+            SELECT 
+				A.no_Averia AS Averia,
+                O.descripcion AS Observ_D,
+                H.horario AS Horario,
+                TH.tipo_Horario AS THorario, 
+                U.nombre AS Usuario
+            FROM Averia A 
+            JOIN RelObsAveria ROA ON A.no_Averia = ROA.no_Averia
+            JOIN Horario H ON ROA.id_Horario = H.id_Horario 
+            JOIN TipoHorario TH ON ROA.id_Tipo_Horario = TH.id_Tipo_Horario 
+            JOIN Observacion O ON ROA.id_Observacion = O.id_Observacion 
+            JOIN RelObsUsr ROU ON O.id_Observacion = ROU.id_Observacion 
+            JOIN Usuario U ON ROU.no_Trabajador = U.no_Trabajador;
             
             #Averia resuelta
 			DELIMITER //
