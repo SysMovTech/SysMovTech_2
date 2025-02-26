@@ -333,30 +333,21 @@
             }
 
 
-            //window.addEventListener('message', function (event) {
-            //    let contenedorModEdit = document.querySelector(".contenedor-mod-edit");
+            window.addEventListener('message', function (event) {
+                let contenedorModEdit = document.querySelector(".contenedor-mod-edit");
 
-            //    if (!contenedorModEdit)
-            //        return;
+                if (!contenedorModEdit)
+                    return;
 
-            //    if (event.data === "resPage.jsp") {
-            //        contenedorModEdit.classList.add("borde-verde");
-            //    } else {
-            //        contenedorModEdit.classList.add("borde-invisible");
-            //    }
-                
-            //    if (event.data === "editPage.jsp") {
-            //        contenedorModEdit.classList.add("borde-invisible");
-            //    } 
-            //});
+            });
 
-            //document.addEventListener("DOMContentLoaded", function () {
-            //    const contenedorVerAvr = document.querySelector('.contenedorveravr');
+            document.addEventListener("DOMContentLoaded", function () {
+                const contenedorVerAvr = document.querySelector('.contenedorveravr');
 
-            //    contenedorVerAvr.addEventListener('click', () => {
-            //        crearModal();
-            //    });
-            // });
+                contenedorVerAvr.addEventListener('click', () => {
+                    crearModal();
+                });
+             });
 
         </script>
 
