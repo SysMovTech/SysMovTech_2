@@ -1,0 +1,114 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+.imagen_index{
+    width: 100px;
+    height: 100px;
+}
+
+.texto_inicio{
+    display: inline-block;
+    text-align: center;
+    font-size: 2vw;
+}
+
+.sep{
+    display: inline-block;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 100;
+    color: #ebebeb;
+}
+
+.sup_inicio{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.inicio_sesion{
+    text-align: center;
+}
+
+.titulo_sesion{
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.texto_sesion{
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.input_sesion{
+    height: 60px;
+    width: 90%;
+    min-width: 30%;
+    border: solid, black, 2px;
+    border-radius: 50px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.submit_sesion{
+    background-color: black;
+    color: white;
+    height: 50px;
+    width: 200px;
+    font-size: 18px;
+    border-radius: 50px;
+    padding-left: 10px;
+}
+
+.texto_politicas{
+    font-size: 17px;
+    color: gray;
+}
+
+.link{
+    text-decoration: none;
+    color: dimgray;
+    font-weight: bold;
+}
+
+.contenedor {
+    width: 37vw;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.contenedor_sup {
+    width: 90vw;
+    max-width: 1200px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .texto_inicio {
+        font-size: 6vw;
+    }
+
+    .sep {
+        color: transparent;
+    }
+
+    .titulo_sesion {
+        font-size: 9vw;
+    }
+
+    .input_sesion {
+        height: 55px;
+        font-size: 1.1rem;
+    }
+  
+    .contenedor {
+    width: 90vw;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+}
