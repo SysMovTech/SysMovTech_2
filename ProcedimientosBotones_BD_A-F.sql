@@ -138,12 +138,16 @@
 			END//
 			DELIMITER ;
            
+ INSERT INTO RelEstadoAveria(id_Estado, no_Averia) 
+    VALUES (1, 1);
+    
+    #drop database Averia_Fix;
            
             CALL Editar_Averia (1, '2025-02-25' , '11:04:55', "Prueba de observación 1","Ibrahim Guerra");
             
             #drop procedure Editar_Averia;
             #Este puede ser el código de la consulta que despliegue las observaciones de C/Averia
-            SELECT 
+            /* SELECT 
 				A.no_Averia AS Averia,
                 O.descripcion AS Observ_D,
                 H.horario AS Horario,
@@ -155,9 +159,10 @@
             JOIN TipoHorario TH ON ROA.id_Tipo_Horario = TH.id_Tipo_Horario 
             JOIN Observacion O ON ROA.id_Observacion = O.id_Observacion 
             JOIN RelObsUsr ROU ON O.id_Observacion = ROU.id_Observacion 
-            JOIN Usuario U ON ROU.no_Trabajador = U.no_Trabajador;
+            JOIN Usuario U ON ROU.no_Trabajador = U.no_Trabajador; */
             
             #Averia resuelta
+            #drop procedure Baja_Averia;
 			DELIMITER //
 			CREATE PROCEDURE Baja_Averia (
 				IN no_Pdc INT,
@@ -167,20 +172,20 @@
                 IN rep TEXT, 
                 IN fecha DATE,
                 IN hora TIME,
-                IN obs_F TEXT,
+                IN obs_F TEXT /*,
                 IN subsis TINYTEXT,
                 IN tip_Averia TINYTEXT,
                 IN cod_Causa TINYTEXT,
                 IN inter_Ub TINYTEXT, 
-                IN lugar TINYTEXT 
+                IN lugar TINYTEXT */
             )
             BEGIN 
-				DECLARE trabajador INT;
+				/*DECLARE trabajador INT;*/
 				DECLARE var_horario DATETIME;
 				DECLARE var_id INT; 
                 DECLARE var_id_Obs INT;
                 
-                SET trabajador = @no_Trabajador;
+                /*SET trabajador = @no_Trabajador;*/
 				SET var_horario = CAST(CONCAT(fecha, ' ', hora) AS DATETIME);
 				
 				IF NOT EXISTS (
@@ -203,12 +208,12 @@
                 THEN 
 					#nombre del que reporta
 					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
-					VALUES(nombre_Reporte, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Reporta'), 
+					VALUES((SELECT no_Trabajador FROM Usuario WHERE nombre = nombre_Reporte), no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Reporta'), 
 						(SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Baja') );
 					
 					#nombre del que recibe
 					INSERT INTO RelUsrAveria (no_Trabajador, no_Averia, id_Rol_Reporte, id_Tipo_Reporte)
-					VALUES(nombre_Recibe, no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Recibe'), 
+					VALUES((SELECT no_Trabajador FROM Usuario WHERE nombre = nombre_Recibe), no_Pdc, (SELECT id_Rol_Reporte FROM RolReporte WHERE rol_Reporte = 'Recibe'), 
 						(SELECT id_Tipo_Reporte FROM TipoReporte WHERE tipo_Reporte = 'Baja') );
                     
                     #reparacion de la avería
@@ -236,14 +241,15 @@
 					END IF;
                     
 					# Observacion final
-					INSERT INTO RelHorarioObs (id_Observacion, id_Tipo_Horario, id_Horario)
-                    VALUES (var_id_Obs, (SELECT id_Tipo_Horario FROM TipoHorario WHERE tipo_Horario = 'Observacion final'), var_id);
+					INSERT INTO RelObsAveria (no_Averia, id_Observacion, id_Tipo_Horario, id_Horario)
+                    VALUES (no_Pdc ,var_id_Obs, (SELECT id_Tipo_Horario FROM TipoHorario WHERE tipo_Horario = 'Observación final'), var_id);
                     
                     # Dar de baja la Averia 
-                    UPDATE RelEstadoAveria SET id_Estado = (SELECT id_Estado FROM Estado WHERE estado = 'Inactivo')
+                    UPDATE RelEstadoAveria SET id_Estado = (SELECT id_Estado FROM Estado WHERE estado = 'Activo')
 					WHERE no_Averia = no_Pdc;
                     
                     # Calificacion si el usuario es supervisor: 
+                    /* 
                     IF(
 						SELECT 1 
                         FROM 
@@ -259,7 +265,7 @@
                             (SELECT id_Intervencion_Ubicacion FROM IntervencionUbicacion WHERE intervencion_Ubicacion = inter_Ub),
                             (SELECT id_Linea FROM Lineas WHERE nom_Linea = lugar)
                         );
-                    END IF; 
+                    END IF; */
                 
                     
 				END IF;
@@ -267,6 +273,56 @@
             END//
             DELIMITER ;
     
+    CALL Baja_Averia(1,'Resuelta', 'Ibrahim Guerra', 'Said Guerra', 'Se ocupó cable 1', '2025-03-15', '09:50:15', 'observacion final'); 
+
+	SELECT 
+		A.no_Averia AS Averia,
+        A.reparacion AS Reparacion,
+		E.estado AS estadoA,
+        HAv.horario AS HorarioAv,
+        THAv.tipo_Horario AS THorarioAv,
+		/* U.nombre AS nombreReporte,
+        U.nombre AS nombreRecibe, */
+        O.id_Observacion AS id_O,
+		O.descripcion AS ObsFinal, 
+        HObs.horario AS HorarioObs,
+        THObs.tipo_Horario AS THorarioObs
+	FROM Averia A 
+	JOIN
+		RelEstadoAveria REA ON A.no_Averia = REA.no_Averia
+    JOIN
+		Estado E ON REA.id_Estado = E.id_Estado
+    JOIN 
+		RelHorarioAveria RHA ON A.no_Averia = RHA.no_Averia
+    JOIN
+		Horario HAv ON RHA.id_Horario = HAv.id_Horario 
+	JOIN
+		TipoHorario THAv ON RHA.id_Tipo_Horario = THAv.id_Tipo_Horario 
+    /* JOIN 
+		RelUsrAveria RUA ON A.no_Averia = RUA.no_Averia
+    JOIN
+		Usuario U ON RUA.no_Trabajador = U.no_Trabajador */
+	JOIN 
+		RelObsAveria ROA ON A.no_Averia = ROA.no_Averia
+	JOIN
+		Horario HObs ON ROA.id_Horario = HObs.id_Horario 
+	JOIN
+		TipoHorario THObs ON ROA.id_Tipo_Horario = THObs.id_Tipo_Horario 
+	JOIN
+		Observacion O ON ROA.id_Observacion = O.id_Observacion
+	WHERE 
+		A.no_Averia = 1;
+        
+        SELECT * FROM Averia WHERE no_Averia = 1;
+SELECT * FROM RelEstadoAveria WHERE no_Averia = 1;
+SELECT * FROM RelHorarioAveria WHERE no_Averia = 1;
+SELECT * FROM RelObsAveria WHERE no_Averia = 1;
+SELECT * FROM Observacion WHERE descripcion = 'observacion final';
+SELECT * FROM Horario WHERE horario = '2025-03-15 09:50:15';
+
+
+
+
     #Procedimientos para botones de otra cosa
 		#Crear un trabajador
 			DELIMITER //

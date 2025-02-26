@@ -1,6 +1,6 @@
 #drop database averia_fix;
 
-INSERT INTO TipoHorario VALUE (3, "Observación");
+
     
     SELECT * FROM TipoHorario;
 
@@ -547,6 +547,8 @@ INSERT INTO RelLineaEstacion VALUES
 INSERT INTO TipoHorario VALUES
 (1, "Alta"),
 (2, "Baja");
+INSERT INTO TipoHorario VALUE (3, "Observación");
+INSERT INTO TipoHorario VALUE (4, "Observación final");
 
 INSERT INTO RolReporte VALUES
 (1, "Reporta"),

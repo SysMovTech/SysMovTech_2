@@ -274,7 +274,7 @@ CREATE TABLE IF NOT EXISTS RelEstadoUsr (
 );
 
 CREATE TABLE IF NOT EXISTS RelEstadoAveria (
-	id_Rel_Estado_Averia INT NOT NULL,
+	id_Rel_Estado_Averia INT NOT NULL auto_increment,
     id_Estado INT,
     no_Averia INT,
 		PRIMARY KEY (id_Rel_Estado_Averia),
