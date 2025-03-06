@@ -408,6 +408,7 @@
     width: 98%;
     overflow-y: scroll;
     scrollbar-width: none;
+    padding-right: 20px;
 }
 
 .contenedor-scroll-avr::-webkit-scrollbar {
@@ -426,6 +427,8 @@
     width: 98%;
     overflow-y: scroll;
     scrollbar-width: none;
+    padding-right: 10px;
+    padding-top:10px;
 }
 
 .contenedor-scroll::-webkit-scrollbar {
@@ -734,11 +737,13 @@ textarea.info-input-addF {
     flex-direction: column;
     max-height: 700px;
     width: 98%;
-/*    overflow-y: scroll;*/
-    scrollbar-width: none;
+    overflow-y: scroll;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
     padding-top: 10px;
     padding-right: 10px;
 }
+
 
 @media (max-width: 1170px) {
     .texto-desc {

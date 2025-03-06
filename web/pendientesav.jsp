@@ -10,6 +10,7 @@
         <link rel="shortcut icon" href="recursos/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="estilos/linea.css"/>
     </head>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -26,9 +27,9 @@
                             icon.src = 'recursos/avrs b.png';
                         } else if (i.classList.contains('trabajadores')) {
                             icon.src = 'recursos/trab b.png';
-                        }else if (i.classList.contains('perfil')) {
+                        } else if (i.classList.contains('perfil')) {
                             icon.src = 'recursos/per b.png';
-                        } 
+                        }
                     });
 
                     this.classList.add('active');
@@ -40,7 +41,7 @@
                         icon.src = 'recursos/averia w.png';
                     } else if (this.classList.contains('trabajadores')) {
                         icon.src = 'recursos/trabW.PNG';
-                    }else if (this.classList.contains('perfil')) {
+                    } else if (this.classList.contains('perfil')) {
                         icon.src = 'recursos/per w.png';
                     }
                 });
@@ -55,11 +56,21 @@
                         icon.src = 'recursos/campana w.png';
                     } else if (item.classList.contains('averias')) {
                         icon.src = 'recursos/averia w.png';
-                    }else if (item.classList.contains('trabajadores')) {
+                    } else if (item.classList.contains('trabajadores')) {
                         icon.src = 'recursos/trabW.PNG';
                     } else if (item.classList.contains('perfil')) {
                         icon.src = 'recursos/per w.png';
                     }
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".mini-contenedor").forEach(contenedor => {
+                if (contenedor.classList.contains("borde-rojo")) {
+                    contenedor.classList.add("activo");
+                } else if (contenedor.classList.contains("borde-verde")) {
+                    contenedor.classList.add("resuelto");
                 }
             });
         });
@@ -80,14 +91,14 @@
                     <img src="recursos/averia w.png" alt="Averías" class="icon">
                     <span>Averías</span>
                 </a>
-                
+
                 <!--Este botón se insertará dependiendo del tipo de usuario (solo el "Jefe" tendrá este botón) -->
                 <a href="VW.jsp" class="menu-item trabajadores">
                     <img src="recursos/trab b.png" alt="Trabajadores" class="icon">
                     <span>Trabajadores</span>
                 </a>
                 <!--Le pregunté a chat y si se puede waza -->
-                
+
                 <a href="perfil.jsp" class="menu-item perfil">
                     <img src="recursos/per b.png" alt="Perfil" class="icon">
                     <span>Perfil</span>
@@ -113,39 +124,39 @@
 
             <div class="contenedor-scroll">
                 <div class="contenedor-responsivo">
-                <div class="fila-contenedores">
-                    <div class="mini-contenedor borde-rojo">
-                        <img src="recursos/linea8.png" alt="Imagen 1" class="imagen-contenedor">
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea8.png" alt="Imagen 1" class="imagen-contenedor">
 
-                        <div class="descpendiente">
-                            <div class="titulo-contenedor">
-                                <div class="titulo"><strong>Lugar</strong></div>
-                                <img src="recursos/linea8.png" alt="linea" class="mini-linea">
-                            </div>
-                            <div class="desc">
-                                <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="mini-contenedor borde-rojo">
-                        <img src="recursos/linea8.png" alt="Imagen 1" class="imagen-contenedor">
-
-                        <div class="descpendiente">
-                            <div class="titulo-contenedor">
-                                <div class="titulo"><strong>Lugar</strong></div>
-                                <img src="recursos/linea8.png" alt="linea" class="mini-linea">
-                            </div>
-                            <div class="desc">
-                                <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea8.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>          
-             
+
+
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea8.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea8.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+
+                </div>
             </div>
         </div>
-            </div>
     </body>
 </html>
