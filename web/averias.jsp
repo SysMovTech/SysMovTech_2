@@ -320,12 +320,19 @@
                 });
             }
 
+            window.addEventListener('message', function (event) {
+                if (event.data === 'cerrarModal') {
+                    cerrarModal();
+                }
+            });
+
             function cerrarModal() {
                 let modal = document.getElementById('modal');
                 if (modal) {
                     modal.remove();
                 }
             }
+
 
             function descargarArchivo() {
                 const enlace = document.createElement("a");
@@ -350,7 +357,7 @@
                     crearModal();
                 });
             });
-            
+
             document.addEventListener("DOMContentLoaded", function () {
                 document.querySelectorAll(".contenedorveravr").forEach(contenedor => {
                     if (contenedor.classList.contains("borde-rojo")) {
