@@ -347,7 +347,7 @@
                 contenedorVerAvr.addEventListener('click', () => {
                     crearModal();
                 });
-             });
+            });
 
         </script>
 

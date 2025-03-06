@@ -11,6 +11,7 @@
         <link rel="shortcut icon" href="recursos/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="estilos/linea.css"/>
     </head>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -107,16 +108,100 @@
                 </div>
                 <div class="titulo-navegador"></div>
             </div>
-            <div class="contenedor-scroll">
+            <div class="contenedor-scroll-noti">
                 <div class="contenedor-responsivo">
                     <div class="fila-contenedores">
                         <div class="mini-contenedor borde-rojo">
-                            <img src="recursos/linea8.png" alt="Imagen 1" class="imagen-contenedor">
+                            <img src="recursos/linea1.png" alt="Imagen 1" class="imagen-contenedor">
 
                             <div class="descpendiente">
                                 <div class="titulo-contenedor">
                                     <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea8.png" alt="linea" class="mini-linea">
+                                    <img src="recursos/linea1.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-contenedor borde-verde">
+                            <img src="recursos/linea2.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea2.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea3.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea3.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-contenedor borde-verde">
+                            <img src="recursos/linea4.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea4.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea5.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea5.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-contenedor borde-verde">
+                            <img src="recursos/linea6.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea6.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea7.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea7.png" alt="linea" class="mini-linea">
                                 </div>
                                 <div class="desc">
                                     <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
@@ -136,10 +221,76 @@
                                 </div>
                             </div>
                         </div>
-                    </div>  
-                </div>
+                    </div>
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea9.png" alt="Imagen 1" class="imagen-contenedor">
 
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea9.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-contenedor borde-verde">
+                            <img src="recursos/lineaA.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/lineaA.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/lineaB.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/lineaB.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-contenedor borde-verde">
+                            <img src="recursos/linea12.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea12.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll(".mini-contenedor").forEach(contenedor => {
+                    if (contenedor.classList.contains("borde-rojo")) {
+                        contenedor.classList.add("activo");
+                    } else if (contenedor.classList.contains("borde-verde")) {
+                        contenedor.classList.add("resuelto");
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

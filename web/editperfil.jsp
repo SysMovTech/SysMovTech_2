@@ -117,9 +117,9 @@
                             <div class="subtitulo">Número de trabajador</div>
                             <input type="text" name="numero_trabajador" value="Información de la base de datos" class="info-input">
                             <div class="subtitulo">Contraseña</div>
-                            <input type="password" name="contrasena" class="info-input">
+                            <input type="text" name="contrasena" class="info-input">
                             <div class="subtitulo">Confirmar contraseña</div>
-                            <input type="password" name="confirmar_contrasena" class="info-input">
+                            <input type="text" name="confirmar_contrasena" class="info-input">
                         </div>
                         <div class="derecha">
                             <!-- acá va la cosa de la bd donde se recupera la dirección de la imagen ok -->

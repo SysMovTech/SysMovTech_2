@@ -729,6 +729,17 @@ textarea.info-input-addF {
     border: 5px transparent;
 }
 
+.contenedor-scroll-noti {
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+    width: 98%;
+/*    overflow-y: scroll;*/
+    scrollbar-width: none;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
 @media (max-width: 1170px) {
     .texto-desc {
         transform: scale(0.8);
