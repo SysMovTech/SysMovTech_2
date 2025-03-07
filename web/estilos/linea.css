@@ -1,0 +1,15 @@
+.mini-contenedor {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mini-contenedor:hover {
+    transform: translateY(-5px);
+}
+
+.activo:hover {
+    box-shadow: 15px 15px 0px rgba(255, 0, 0, 10);
+}
+
+.resuelto:hover {
+    box-shadow: 15px 15px 0px rgba(0, 128, 1, 10);
+}
