@@ -98,7 +98,20 @@
                 </a>
             </nav>
             <div class="logout-section">
-                <a href="logout.jsp" class="logout-link">Cerrar sesión</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </div>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <div class="contenedorveravr-print">    
+                    <div class="titulo-modal">
+                        <h3><b>¿Estás seguro que deseas cerrar sesión?</b></h3>
+                    </div>
+                    <div class="botonesEstado">
+                        <button class="salir" onclick="confirmarLogout()">Sí</button>
+                        <button class="seguir" onclick="cerrarModalLogout()">No</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -169,6 +182,188 @@
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+                    <div class="fila-contenedores-avr">
+                        <div class="contenedorveravr borde-verde">
+                            <table class="tabla-contenido">
+                                <tr>
+                                    <td style="width: 7%">No CC <br> No PDC</td>
+                                    <td style="width: 2%">Reportó PDC</td>                                
+                                    <td style="width: 7%">Recibió TC</td>
+                                    <td style="width: 7%">Lugar</td>
+                                    <td style="width: 30%">Descripción</td>
+                                    <td style="width: 4%">Línea</td>
+                                    <td style="width: 1%">Subsis</td>
+                                    <td style="width: 2%">Intervención<br>ubicación</td>
+                                    <td style="width: 2%">Código<br>causa</td>
+                                    <td style="width: 2%">Tipo<br>avería</td>
+                                </tr>
+                                <tr>
+                                    <td>1234</td>
+                                    <td>Nombre</td>
+                                    <td>Nombre</td>
+                                    <td>Estación</td>
+                                    <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                    <td>
+                                        <div class="folinea">
+                                            <img src="recursos/linea8.png">
+                                        </div>
+                                    </td>
+                                    <td>AB</td>
+                                    <td>ABCD</td>
+                                    <td>PQRS</td>
+                                    <td>XY</td>
+                                </tr>
+                            </table>
+                            <div class="informacion-adicional">
+                                <div class="info-col">Fecha</div>
+                                <div class="info-col">Hora</div>
+                                <div class="info-col">Reparación</div>
+                                <div class="info-col">Estado</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="fila-contenedores-avr">
+                        <div class="contenedorveravr borde-rojo">
+                            <table class="tabla-contenido">
+                                <tr>
+                                    <td style="width: 7%">No CC <br> No PDC</td>
+                                    <td style="width: 2%">Reportó PDC</td>                                
+                                    <td style="width: 7%">Recibió TC</td>
+                                    <td style="width: 7%">Lugar</td>
+                                    <td style="width: 30%">Descripción</td>
+                                    <td style="width: 4%">Línea</td>
+                                    <td style="width: 1%">Subsis</td>
+                                    <td style="width: 2%">Intervención<br>ubicación</td>
+                                    <td style="width: 2%">Código<br>causa</td>
+                                    <td style="width: 2%">Tipo<br>avería</td>
+                                </tr>
+                                <tr>
+                                    <td>1234</td>
+                                    <td>Nombre</td>
+                                    <td>Nombre</td>
+                                    <td>Estación</td>
+                                    <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                    <td>
+                                        <div class="folinea">
+                                            <img src="recursos/linea8.png">
+                                        </div>
+                                    </td>
+                                    <td>AB</td>
+                                    <td>ABCD</td>
+                                    <td>PQRS</td>
+                                    <td>XY</td>
+                                </tr>
+                            </table>
+                            <div class="informacion-adicional">
+                                <div class="info-col">Fecha</div>
+                                <div class="info-col">Hora</div>
+                                <div class="info-col">Reparación</div>
+                                <div class="info-col">Estado</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="fila-contenedores-avr">
+                        <div class="contenedorveravr borde-rojo">
+                            <table class="tabla-contenido">
+                                <tr>
+                                    <td style="width: 7%">No CC <br> No PDC</td>
+                                    <td style="width: 2%">Reportó PDC</td>                                
+                                    <td style="width: 7%">Recibió TC</td>
+                                    <td style="width: 7%">Lugar</td>
+                                    <td style="width: 30%">Descripción</td>
+                                    <td style="width: 4%">Línea</td>
+                                    <td style="width: 1%">Subsis</td>
+                                    <td style="width: 2%">Intervención<br>ubicación</td>
+                                    <td style="width: 2%">Código<br>causa</td>
+                                    <td style="width: 2%">Tipo<br>avería</td>
+                                </tr>
+                                <tr>
+                                    <td>1234</td>
+                                    <td>Nombre</td>
+                                    <td>Nombre</td>
+                                    <td>Estación</td>
+                                    <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                    <td>
+                                        <div class="folinea">
+                                            <img src="recursos/linea8.png">
+                                        </div>
+                                    </td>
+                                    <td>AB</td>
+                                    <td>ABCD</td>
+                                    <td>PQRS</td>
+                                    <td>XY</td>
+                                </tr>
+                            </table>
+                            <div class="informacion-adicional">
+                                <div class="info-col">Fecha</div>
+                                <div class="info-col">Hora</div>
+                                <div class="info-col">Reparación</div>
+                                <div class="info-col">Estado</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="fila-contenedores-avr">
+                        <div class="contenedorveravr borde-verde">
+                            <table class="tabla-contenido">
+                                <tr>
+                                    <td style="width: 7%">No CC <br> No PDC</td>
+                                    <td style="width: 2%">Reportó PDC</td>                                
+                                    <td style="width: 7%">Recibió TC</td>
+                                    <td style="width: 7%">Lugar</td>
+                                    <td style="width: 30%">Descripción</td>
+                                    <td style="width: 4%">Línea</td>
+                                    <td style="width: 1%">Subsis</td>
+                                    <td style="width: 2%">Intervención<br>ubicación</td>
+                                    <td style="width: 2%">Código<br>causa</td>
+                                    <td style="width: 2%">Tipo<br>avería</td>
+                                </tr>
+                                <tr>
+                                    <td>1234</td>
+                                    <td>Nombre</td>
+                                    <td>Nombre</td>
+                                    <td>Estación</td>
+                                    <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                    <td>
+                                        <div class="folinea">
+                                            <img src="recursos/linea8.png">
+                                        </div>
+                                    </td>
+                                    <td>AB</td>
+                                    <td>ABCD</td>
+                                    <td>PQRS</td>
+                                    <td>XY</td>
+                                </tr>
+                            </table>
+                            <div class="informacion-adicional">
+                                <div class="info-col">Fecha</div>
+                                <div class="info-col">Hora</div>
+                                <div class="info-col">Reparación</div>
+                                <div class="info-col">Estado</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -198,6 +393,16 @@
 
 
         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const contenedoresVerAvr = document.querySelectorAll('.contenedorveravr');
+                contenedoresVerAvr.forEach(contenedor => {
+                    contenedor.addEventListener('click', function () {
+                        crearModal();
+                    });
+                });
+            });
+
+
             const contenedorVerAvr = document.querySelector('.contenedorveravr');
 
             function crearModal() {
@@ -276,7 +481,7 @@
                             <div class="info-col">Estado</div>
                         </div>
                         <div class="botones">
-                            <button class="cancelar" onclick="cerrarModal()">Cancelar</button>
+                            <button class="cancelar" onclick="cerrarModal()">Cerrar</button>
                         </div>    
                     </div>
                 </div>
@@ -305,7 +510,7 @@
                         <h2>Imprimir reporte</h2>
                         <div class="botones">
                             <button class="confirmar" onclick="descargarArchivo()">Descargar</button>
-                            <button class="cancelar" onclick="cerrarModal()">Cancelar</button>
+                            <button class="cancelar" onclick="cerrarModal()">Cerrar</button>
                         </div>                        
                     </div>
                 </div>
@@ -369,6 +574,25 @@
             });
 
         </script>
+        <script>
+            document.getElementById('logoutLink').addEventListener('click', function (e) {
+                e.preventDefault();
+                mostrarModalLogout();
+            });
 
+            function mostrarModalLogout() {
+                let modal = document.getElementById('logoutModal');
+                modal.classList.add('active');
+            }
+
+            function cerrarModalLogout() {
+                let modal = document.getElementById('logoutModal');
+                modal.classList.remove('active');
+            }
+
+            function confirmarLogout() {
+                window.location.href = "logout.jsp";
+            }
+        </script>
     </body>
 </html>

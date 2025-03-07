@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="estilos/linea.css"/>
+        <link rel="stylesheet" href="estilos/mod.css"/>
     </head>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -92,12 +93,10 @@
                     <span>Averías</span>
                 </a>
 
-                <!--Este botón se insertará dependiendo del tipo de usuario (solo el "Jefe" tendrá este botón) -->
                 <a href="VW.jsp" class="menu-item trabajadores">
                     <img src="recursos/trab b.png" alt="Trabajadores" class="icon">
                     <span>Trabajadores</span>
                 </a>
-                <!--Le pregunté a chat y si se puede waza -->
 
                 <a href="perfil.jsp" class="menu-item perfil">
                     <img src="recursos/per b.png" alt="Perfil" class="icon">
@@ -105,7 +104,20 @@
                 </a>
             </nav>
             <div class="logout-section">
-                <a href="logout.jsp" class="logout-link">Cerrar sesión</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </div>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <div class="contenedorveravr-print">    
+                    <div class="titulo-modal">
+                        <h3><b>¿Estás seguro que deseas cerrar sesión?</b></h3>
+                    </div>
+                    <div class="botonesEstado">
+                        <button class="salir" onclick="confirmarLogout()">Sí</button>
+                        <button class="seguir" onclick="cerrarModalLogout()">No</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -158,5 +170,129 @@
                 </div>
             </div>
         </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div class="titulo-modal">
+                    <h3><b>Opciones de avería</b></h3>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const contenedoresVerAvr = document.querySelectorAll('.mini-contenedor');
+                contenedoresVerAvr.forEach(contenedor => {
+                    contenedor.addEventListener('click', function () {
+                        crearModal();
+                    });
+                });
+            });
+
+            function crearModal() {
+                let modalExistente = document.getElementById('modal');
+                if (modalExistente) {
+                    modalExistente.remove();
+                }
+
+                let modal = document.createElement('div');
+                modal.id = 'modal';
+                modal.className = 'modal active';
+                modal.innerHTML =
+                        `<div class="modal-content active">
+                        <div class="contenedor-scroll-avr-ver">
+                            <div class="fila-contenedores-avr">
+                                <div class="contenedorveravr-ver">
+                                    <h1>Ver avería</h1>
+                                    <table class="tabla-contenido">
+                                        <tr>
+                                            <td style="width: 7%">No CC <br> No PDC</td>
+                                            <td style="width: 2%">Reportó PDC</td>                                
+                                            <td style="width: 7%">Recibió TC</td>
+                                            <td style="width: 7%">Lugar</td>
+                                            <td style="width: 30%">Descripción</td>
+                                            <td style="width: 4%">Línea</td>
+                                            <td style="width: 1%">Subsis</td>
+                                            <td style="width: 2%">Intervención<br>ubicación</td>
+                                            <td style="width: 2%">Código<br>causa</td>
+                                            <td style="width: 2%">Tipo<br>avería</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1234</td>
+                                            <td>Nombre</td>
+                                            <td>Nombre</td>
+                                            <td>Estación</td>
+                                            <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                            <td>
+                                                <div class="folinea">
+                                                    <img src="recursos/linea8.png">
+                                                </div>
+                                            </td>
+                                            <td>AB</td>
+                                            <td>ABCD</td>
+                                            <td>PQRS</td>
+                                            <td>XY</td>
+                                        </tr>
+                                    </table>
+                                    <div class="informacion-adicional">
+                                        <div class="info-col">Fecha</div>
+                                        <div class="info-col">Hora</div>
+                                        <div class="info-col">Reparación</div>
+                                        <div class="info-col">Estado</div>
+                                    </div>
+                                    <div class="botones">
+                                        <button class="cancelar" onclick="cerrarModal()">Cerrar</button>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+
+                document.body.appendChild(modal);
+
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        cerrarModal();
+                    }
+                });
+            }
+
+            function cerrarModal() {
+                let modal = document.getElementById('modal');
+                if (modal) {
+                    modal.remove();
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                document.querySelectorAll(".mini-contenedor").forEach(contenedor => {
+                    if (contenedor.classList.contains("borde-rojo")) {
+                        contenedor.classList.add("activo");
+                    } else if (contenedor.classList.contains("borde-verde")) {
+                        contenedor.classList.add("resuelto");
+                    }
+                });
+            });
+        </script>
+        <script>
+            document.getElementById('logoutLink').addEventListener('click', function (e) {
+                e.preventDefault();
+                mostrarModalLogout();
+            });
+
+            function mostrarModalLogout() {
+                let modal = document.getElementById('logoutModal');
+                modal.classList.add('active');
+            }
+
+            function cerrarModalLogout() {
+                let modal = document.getElementById('logoutModal');
+                modal.classList.remove('active');
+            }
+
+            function confirmarLogout() {
+                window.location.href = "logout.jsp";
+            }
+        </script>
     </body>
 </html>

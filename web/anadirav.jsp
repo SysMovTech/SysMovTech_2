@@ -11,6 +11,7 @@
         <link rel="shortcut icon" href="recursos/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="estilos/mod.css"/>
     </head>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -92,7 +93,20 @@
                 </a>
             </nav>
             <div class="logout-section">
-                <a href="logout.jsp" class="logout-link">Cerrar sesión</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </div>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <div class="contenedorveravr-print">    
+                    <div class="titulo-modal">
+                        <h3><b>¿Estás seguro que deseas cerrar sesión?</b></h3>
+                    </div>
+                    <div class="botonesEstado">
+                        <button class="salir" onclick="confirmarLogout()">Sí</button>
+                        <button class="seguir" onclick="cerrarModalLogout()">No</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -135,37 +149,37 @@
                                     </label>
                                 </div>
                             </div>
-                            
+
                             <div class="formadd">
-                                
+
                                 <div class="two-column-container">
-                                <div class="left-column">
-                                    <div class="campocolumna">No PDC: <input type="number" name="pdc" class="info-input-add"></div>
-                                    <div class="campocolumna">Fecha de inicio: <input type="date" name="fecha" class="info-input-addB"></div>
-                                </div>
-                                <div class="right-column">
-                                    <div class="campocolumna">Linea: 
-                                        <select name="rol" id="linea" class="info-input-add" onchange="actualizarEstaciones()">
-                                            <option value="" disabled selected>Seleccione la línea</option>
-                                            <option value="L-1">Línea 1</option>
-                                            <option value="L-2">Línea 2</option>
-                                            <option value="L-3">Línea 3</option>
-                                            <option value="L-4">Línea 4</option>
-                                            <option value="L-5">Línea 5</option>
-                                            <option value="L-6">Línea 6</option>
-                                            <option value="L-7">Línea 7</option>
-                                            <option value="L-8">Línea 8</option>
-                                            <option value="L-9">Línea 9</option>
-                                            <option value="L-A">Línea A</option>
-                                            <option value="L-B">Línea B</option>
-                                            <option value="L-12">Línea 12</option>
-                                        </select>
+                                    <div class="left-column">
+                                        <div class="campocolumna">No PDC: <input type="number" name="pdc" class="info-input-add"></div>
+                                        <div class="campocolumna">Fecha de inicio: <input type="date" name="fecha" class="info-input-addB"></div>
                                     </div>
-                                    <div class="campocolumna">Hora de inicio: <input type="time" name="hora" class="info-input-addB"></div>
+                                    <div class="right-column">
+                                        <div class="campocolumna">Linea: 
+                                            <select name="rol" id="linea" class="info-input-add" onchange="actualizarEstaciones()">
+                                                <option value="" disabled selected>Seleccione la línea</option>
+                                                <option value="L-1">Línea 1</option>
+                                                <option value="L-2">Línea 2</option>
+                                                <option value="L-3">Línea 3</option>
+                                                <option value="L-4">Línea 4</option>
+                                                <option value="L-5">Línea 5</option>
+                                                <option value="L-6">Línea 6</option>
+                                                <option value="L-7">Línea 7</option>
+                                                <option value="L-8">Línea 8</option>
+                                                <option value="L-9">Línea 9</option>
+                                                <option value="L-A">Línea A</option>
+                                                <option value="L-B">Línea B</option>
+                                                <option value="L-12">Línea 12</option>
+                                            </select>
+                                        </div>
+                                        <div class="campocolumna">Hora de inicio: <input type="time" name="hora" class="info-input-addB"></div>
+                                    </div>
                                 </div>
-                            </div>
-                                
-                                
+
+
                                 <div class="campo">
                                     <span class="campo-label">Estación: </span>
                                     <select id="estaciones" class="info-input">
@@ -184,7 +198,7 @@
                                     <span class="campo-label">Nombre de quien recibe: </span>
                                     <input type="text" name="nombre" class="info-input">
                                 </div>
-                                
+
                             </div>
 
                             <div class="botones">
@@ -367,7 +381,7 @@
                     {value: "CVA", nombre: "Ciudad Deportiva"},
                     {value: "PBA", nombre: "Puebla"},
                     {value: "PLA", nombre: "Pantitlán"}
-                    
+
                 ],
                 "L-A": [
                     {value: "PLA", nombre: "Pantitlán"},
@@ -440,6 +454,26 @@
                         estacionesSelect.appendChild(opcion);
                     });
                 }
+            }
+        </script>
+        <script>
+            document.getElementById('logoutLink').addEventListener('click', function (e) {
+                e.preventDefault(); 
+                mostrarModalLogout();
+            });
+
+            function mostrarModalLogout() {
+                let modal = document.getElementById('logoutModal');
+                modal.classList.add('active'); 
+            }
+
+            function cerrarModalLogout() {
+                let modal = document.getElementById('logoutModal');
+                modal.classList.remove('active'); 
+            }
+
+            function confirmarLogout() {
+                window.location.href = "logout.jsp"; 
             }
         </script>
     </body>

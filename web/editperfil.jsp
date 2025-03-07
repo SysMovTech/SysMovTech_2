@@ -10,61 +10,62 @@
         <link rel="shortcut icon" href="recursos/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="estilos/mod.css"/>
     </head>
     <body>
         <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuItems = document.querySelectorAll('.menu-item');
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuItems = document.querySelectorAll('.menu-item');
 
-            menuItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    menuItems.forEach(i => {
-                        i.classList.remove('active');
-                        const icon = i.querySelector('.icon');
-                        if (i.classList.contains('notificaciones')) {
-                            icon.src = 'recursos/campana b.png';
-                        } else if (i.classList.contains('averias')) {
-                            icon.src = 'recursos/avrs b.png';
-                        } else if (i.classList.contains('trabajadores')) {
-                            icon.src = 'recursos/trab b.png';
-                        }else if (i.classList.contains('perfil')) {
-                            icon.src = 'recursos/per b.png';
-                        } 
+                menuItems.forEach(item => {
+                    item.addEventListener('click', function () {
+                        menuItems.forEach(i => {
+                            i.classList.remove('active');
+                            const icon = i.querySelector('.icon');
+                            if (i.classList.contains('notificaciones')) {
+                                icon.src = 'recursos/campana b.png';
+                            } else if (i.classList.contains('averias')) {
+                                icon.src = 'recursos/avrs b.png';
+                            } else if (i.classList.contains('trabajadores')) {
+                                icon.src = 'recursos/trab b.png';
+                            } else if (i.classList.contains('perfil')) {
+                                icon.src = 'recursos/per b.png';
+                            }
+                        });
+
+                        this.classList.add('active');
+
+                        const icon = this.querySelector('.icon');
+                        if (this.classList.contains('notificaciones')) {
+                            icon.src = 'recursos/campana w.png';
+                        } else if (this.classList.contains('averias')) {
+                            icon.src = 'recursos/averia w.png';
+                        } else if (this.classList.contains('trabajadores')) {
+                            icon.src = 'recursos/trabW.PNG';
+                        } else if (this.classList.contains('perfil')) {
+                            icon.src = 'recursos/per w.png';
+                        }
                     });
+                });
 
-                    this.classList.add('active');
-
-                    const icon = this.querySelector('.icon');
-                    if (this.classList.contains('notificaciones')) {
-                        icon.src = 'recursos/campana w.png';
-                    } else if (this.classList.contains('averias')) {
-                        icon.src = 'recursos/averia w.png';
-                    } else if (this.classList.contains('trabajadores')) {
-                        icon.src = 'recursos/trabW.PNG';
-                    }else if (this.classList.contains('perfil')) {
-                        icon.src = 'recursos/per w.png';
+                const currentPath = window.location.pathname.split('/').pop();
+                menuItems.forEach(item => {
+                    if (item.getAttribute('href') === currentPath) {
+                        item.classList.add('active');
+                        const icon = item.querySelector('.icon');
+                        if (item.classList.contains('notificaciones')) {
+                            icon.src = 'recursos/campana w.png';
+                        } else if (item.classList.contains('averias')) {
+                            icon.src = 'recursos/averia w.png';
+                        } else if (item.classList.contains('trabajadores')) {
+                            icon.src = 'recursos/trabW.PNG';
+                        } else if (item.classList.contains('perfil')) {
+                            icon.src = 'recursos/per w.png';
+                        }
                     }
                 });
             });
-
-            const currentPath = window.location.pathname.split('/').pop();
-            menuItems.forEach(item => {
-                if (item.getAttribute('href') === currentPath) {
-                    item.classList.add('active');
-                    const icon = item.querySelector('.icon');
-                    if (item.classList.contains('notificaciones')) {
-                        icon.src = 'recursos/campana w.png';
-                    } else if (item.classList.contains('averias')) {
-                        icon.src = 'recursos/averia w.png';
-                    }else if (item.classList.contains('trabajadores')) {
-                        icon.src = 'recursos/trabW.PNG';
-                    } else if (item.classList.contains('perfil')) {
-                        icon.src = 'recursos/per w.png';
-                    }
-                }
-            });
-        });
-    </script>
+        </script>
 
     <body>
         <div class="vertical-menu">
@@ -81,21 +82,32 @@
                     <img src="recursos/avrs b.png" alt="Averías" class="icon">
                     <span>Averías</span>
                 </a>
-                
-                <!--Este botón se insertará dependiendo del tipo de usuario (solo el "Jefe" tendrá este botón) -->
+
                 <a href="VW.jsp" class="menu-item trabajadores">
                     <img src="recursos/trab b.png" alt="Trabajadores" class="icon">
                     <span>Trabajadores</span>
                 </a>
-                <!--Le pregunté a chat y si se puede waza -->
-                
+
                 <a href="perfil.jsp" class="menu-item active">
                     <img src="recursos/per w.png" alt="Perfil" class="icon">
                     <span>Perfil</span>
                 </a>
             </nav>
             <div class="logout-section">
-                <a href="logout.jsp" class="logout-link">Cerrar sesión</a>
+                <a href="#" class="logout-link" id="logoutLink">Cerrar sesión</a>
+            </div>
+        </div>
+        <div id="logoutModal" class="modal">
+            <div class="modal-content">
+                <div class="contenedorveravr-print">    
+                    <div class="titulo-modal">
+                        <h3><b>¿Estás seguro que deseas cerrar sesión?</b></h3>
+                    </div>
+                    <div class="botonesEstado">
+                        <button class="salir" onclick="confirmarLogout()">Sí</button>
+                        <button class="seguir" onclick="cerrarModalLogout()">No</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -133,5 +145,25 @@
                 </div>
             </form>
         </div>
+        <script>
+            document.getElementById('logoutLink').addEventListener('click', function (e) {
+                e.preventDefault();
+                mostrarModalLogout();
+            });
+
+            function mostrarModalLogout() {
+                let modal = document.getElementById('logoutModal');
+                modal.classList.add('active');
+            }
+
+            function cerrarModalLogout() {
+                let modal = document.getElementById('logoutModal');
+                modal.classList.remove('active');
+            }
+
+            function confirmarLogout() {
+                window.location.href = "logout.jsp";
+            }
+        </script>
     </body>
 </html>

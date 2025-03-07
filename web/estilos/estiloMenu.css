@@ -118,11 +118,36 @@ body {
     color: #ff3333;
 }
 
+.salir{
+    background-color: #cc0000;
+    border-radius: 40px;
+    border: none;
+    padding: 10px 10px;
+    margin-right: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 160px;
+}
 
+.seguir{
+    background-color: #ffffff;
+    border-radius: 40px;
+    border: none;
+    padding: 10px 10px;
+    margin-right: 10px;
+    color: #333;
+    cursor: pointer;
+    font-size: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 160px;
+}
 
-
-
-
+.salir:hover, .seguir:hover {
+    background-color: #999999;
+    transform: scale(1.05);
+}
 
 
 
