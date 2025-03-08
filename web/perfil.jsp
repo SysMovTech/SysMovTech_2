@@ -119,7 +119,20 @@
                 </div>
                 <div class="titulo-navegador">Perfil</div>
                 <div class="logout-sectionP">
-                    <a href="logout.jsp" class="logout-link">Cerrar sesión</a>
+                    <a href="#" class="logout-link" id="logoutLinkP">Cerrar sesión</a>
+                </div>
+            </div>
+            <div id="logoutModal" class="modal">
+                <div class="modal-content">
+                    <div class="contenedorveravr-print">    
+                        <div class="titulo-modal">
+                            <h3><b>¿Estás seguro que deseas cerrar sesión?</b></h3>
+                        </div>
+                        <div class="botonesEstado">
+                            <button class="salir" onclick="confirmarLogout()">Sí</button>
+                            <button class="seguir" onclick="cerrarModalLogout()">No</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -167,6 +180,13 @@
             function confirmarLogout() {
                 window.location.href = "logout.jsp";
             }
+            
+            document.getElementById('logoutLinkP').addEventListener('click', function (e) {
+                e.preventDefault();
+                mostrarModalLogout();
+            });
+
         </script>
     </body>
 </html>
+
