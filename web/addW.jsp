@@ -129,7 +129,7 @@
                             <div class="subtitulo">Número de trabajador</div>
                             <input type="text" name="numero_trabajador" placeholder="Ingrese el numero del trabajador" class="info-input">
                             <div class="subtitulo">Contraseña temporal</div>
-                            <input type="password" name="contrasena" class="info-input" placeholder="Contraseña ">
+                            <input type="text" name="contrasena" class="info-input" placeholder="Contraseña ">
                             <div class="subtitulo">Rol laboral</div>
                             <select name="rol" id="rol" class="info-input">
                                 <option value="" disabled selected>Técnico | Supervisor </option>
