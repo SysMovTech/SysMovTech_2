@@ -215,7 +215,7 @@ CREATE TABLE IF NOT EXISTS RelHorarioAveria (
 			REFERENCES Horario(id_Horario)
 );
 
-CREATE TABLE IF NOT EXISTS RelHorarioObs (
+/* CREATE TABLE IF NOT EXISTS RelHorarioObs (
 	id_Rel_Horario_Obs INT NOT NULL auto_increment,
     id_Observacion INT,
     id_Tipo_Horario INT,
@@ -227,7 +227,7 @@ CREATE TABLE IF NOT EXISTS RelHorarioObs (
 			REFERENCES TipoHorario(id_Tipo_Horario),
 		FOREIGN KEY (id_Horario) 
 			REFERENCES Horario(id_Horario)
-);
+); */
 
 CREATE TABLE IF NOT EXISTS RelLineaEstacion (
 	id_Rel_Linea_Estacion VARCHAR(8) NOT NULL,
