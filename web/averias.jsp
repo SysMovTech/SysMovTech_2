@@ -162,7 +162,7 @@
                                     <td>Nombre</td>
                                     <td>Nombre</td>
                                     <td>Estación</td>
-                                    <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
                                     <td>
                                         <div class="folinea">
                                             <img src="recursos/linea8.png">
@@ -207,7 +207,7 @@
                                     <td>Nombre</td>
                                     <td>Nombre</td>
                                     <td>Estación</td>
-                                    <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
                                     <td>
                                         <div class="folinea">
                                             <img src="recursos/linea8.png">
@@ -253,7 +253,7 @@
                                     <td>Nombre</td>
                                     <td>Nombre</td>
                                     <td>Estación</td>
-                                    <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
                                     <td>
                                         <div class="folinea">
                                             <img src="recursos/linea8.png">

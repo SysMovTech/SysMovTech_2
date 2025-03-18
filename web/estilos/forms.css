@@ -416,4 +416,12 @@
     .campo{
         flex-direction: column;
     }
+    
+    .botonesEstado{
+        gap: 10px;
+    }
+    
+    .two-column-container{
+        flex-direction: column;
+    }
 }

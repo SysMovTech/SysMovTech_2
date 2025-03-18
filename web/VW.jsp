@@ -121,7 +121,7 @@
 
 
             <div class="contenedor-scroll">
-                <div class="contenedor-responsivo">
+                <div class="contenedor-responsivo vertrabajadores">
                     <div class="fila-contenedores">
                         <div class="mini-contenedor">
                             <img src="recursos/sup b.png" alt="Imagen 1" class="imagen-contenedor">

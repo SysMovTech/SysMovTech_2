@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Notificaciones</title>
+        <title>Perfil</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="estilos/estiloMenu.css"/>
@@ -10,7 +10,6 @@
         <link rel="shortcut icon" href="recursos/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="estilos/linea.css"/>
         <link rel="stylesheet" href="estilos/mod.css"/>
     </head>
     <script>
@@ -75,8 +74,8 @@
                 <span class="empresa">AveríaFix</span>
             </div>
             <nav class="menu-section">
-                <a href="notificaciones.jsp" class="menu-item">
-                    <img src="recursos/campana w.png" alt="Notificaciones" class="icon">
+                <a href="notificaciones.jsp" class="menu-item notificaciones">
+                    <img src="recursos/campana b.png" alt="Notificaciones" class="icon">
                     <span>Notificaciones</span>
                 </a>
                 <a href="averias.jsp" class="menu-item averias">
@@ -89,8 +88,8 @@
                     <span>Trabajadores</span>
                 </a>
 
-                <a href="perfil.jsp" class="menu-item perfil">
-                    <img src="recursos/per b.png" alt="Perfil" class="icon">
+                <a href="perfil.jsp" class="menu-item active">
+                    <img src="recursos/per w.png" alt="Perfil" class="icon">
                     <span>Perfil</span>
                 </a>
             </nav>
@@ -113,313 +112,80 @@
         </div>
 
         <div class="main-container">
-            <div class="navegadorN">
+            <div class="navegador">
                 <div class="menu-navegador">
-
+                    <button class="boton selected"><img src="recursos/verav w.png" alt="Ver" class="iconoopc"><span>Ver</span></button>
+                    <a href="editperfil.jsp"><button class="boton"><img src="recursos/editar b.png" alt="Editar" class="iconoopc"></button></a>
                 </div>
-                <div class="titulo-navegador"></div>
+                <div class="titulo-navegador">Perfil</div>
+                <div class="logout-sectionP">
+                    <a href="#" class="logout-link" id="logoutLinkP">Cerrar sesión</a>
+                </div>
             </div>
-            <div class="contenedor-scroll-noti">
-                <div class="contenedor-responsivo">
-                    <div class="fila-contenedores">
-                        <div class="mini-contenedor borde-rojo">
-                            <img src="recursos/linea1.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea1.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
-                                </div>
-                            </div>
+            <div id="logoutModal" class="modal">
+                <div class="modal-content">
+                    <div class="contenedorveravr-print">    
+                        <div class="titulo-modal">
+                            <h3><b>¿Estás seguro que deseas cerrar sesión?</b></h3>
                         </div>
-                        <div class="mini-contenedor borde-verde">
-                            <img src="recursos/linea2.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea2.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="fila-contenedores">
-                        <div class="mini-contenedor borde-rojo">
-                            <img src="recursos/linea3.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea3.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mini-contenedor borde-verde">
-                            <img src="recursos/linea4.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea4.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
-                                </div>
-                            </div>
+                        <div class="botonesEstado">
+                            <button class="salir" onclick="confirmarLogout()">Sí</button>
+                            <button class="seguir" onclick="cerrarModalLogout()">No</button>
                         </div>
                     </div>
-                    <div class="fila-contenedores">
-                        <div class="mini-contenedor borde-rojo">
-                            <img src="recursos/linea5.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea5.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mini-contenedor borde-verde">
-                            <img src="recursos/linea6.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea6.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fila-contenedores">
-                        <div class="mini-contenedor borde-rojo">
-                            <img src="recursos/linea7.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea7.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mini-contenedor borde-verde">
-                            <img src="recursos/linea8.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea8.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fila-contenedores">
-                        <div class="mini-contenedor borde-rojo">
-                            <img src="recursos/linea9.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea9.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mini-contenedor borde-verde">
-                            <img src="recursos/lineaA.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/lineaA.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fila-contenedores">
-                        <div class="mini-contenedor borde-rojo">
-                            <img src="recursos/lineaB.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/lineaB.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Platina digital sigue con demasiada interferencia y se cortan las llamadas</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mini-contenedor borde-verde">
-                            <img src="recursos/linea12.png" alt="Imagen 1" class="imagen-contenedor">
-
-                            <div class="descpendiente">
-                                <div class="titulo-contenedor">
-                                    <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea12.png" alt="linea" class="mini-linea">
-                                </div>
-                                <div class="desc">
-                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
                 </div>
+            </div>
+
+            <div class="contenedor">
+                <div class="contenido">
+                    <div class="izquierda">
+                        <h1>Ver perfil</h1>
+                        <div class="subtitulo">Nombre</div>
+                        <input type="text" value="Información de la base de datos" readonly class="info-input">
+                        <div class="subtitulo">Número de trabajador</div>
+                        <input type="text" value="Información de la base de datos" readonly class="info-input">                     
+                        <div class="subtitulo">Contraseña</div>
+                        <input type="password" value="contraseña" readonly class="info-input">   
+                        <div class="subtitulo">Rol laboral</div>
+                        <input type="text" value="Información de la base de datos" readonly class="info-input">   
+                    </div>
+                    <div class="derecha">
+                        <!-- acá va la cosa de la bd donde se recupera la dirección de la imagen ok -->
+                        <img src="recursos/tec b.png" alt="Perfil">
+                    </div>
+                </div>
+                <div class="subtituloABAJO">
+                    <div class="subtitulo">Información</div>
+                    <div id="info" class="info-div">Aquí va el texto que se saca del if donde dependiendo del tipo de perfil se despliega información diferente sobre lo que pueden hacer y etc </div>
+                </div>
+
             </div>
         </div>
-
-
-
-
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <div class="titulo-modal">
-                    <h3><b>Opciones de avería</b></h3>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const contenedoresVerAvr = document.querySelectorAll('.mini-contenedor');
-                contenedoresVerAvr.forEach(contenedor => {
-                    contenedor.addEventListener('click', function () {
-                        crearModal();
-                    });
-                });
-            });
-
-            function crearModal() {
-                let modalExistente = document.getElementById('modal');
-                if (modalExistente) {
-                    modalExistente.remove();
-                }
-
-                let modal = document.createElement('div');
-                modal.id = 'modal';
-                modal.className = 'modal active';
-                modal.innerHTML =
-                        `<div class="modal-content active">
-                        <div class="contenedor-scroll-avr-ver">
-                            <div class="fila-contenedores-avr">
-                                <div class="contenedorveravr-ver">
-                                    <h1>Ver avería</h1>
-                                    <table class="tabla-contenido">
-                                        <tr>
-                                            <td style="width: 7%">No CC <br> No PDC</td>
-                                            <td style="width: 2%">Reportó PDC</td>                                
-                                            <td style="width: 7%">Recibió TC</td>
-                                            <td style="width: 7%">Lugar</td>
-                                            <td style="width: 30%">Descripción</td>
-                                            <td style="width: 4%">Línea</td>
-                                            <td style="width: 1%">Subsis</td>
-                                            <td style="width: 2%">Intervención<br>ubicación</td>
-                                            <td style="width: 2%">Código<br>causa</td>
-                                            <td style="width: 2%">Tipo<br>avería</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1234</td>
-                                            <td>Nombre</td>
-                                            <td>Nombre</td>
-                                            <td>Estación</td>
-                                            <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
-                                            <td>
-                                                <div class="folinea">
-                                                    <img src="recursos/linea8.png">
-                                                </div>
-                                            </td>
-                                            <td>AB</td>
-                                            <td>ABCD</td>
-                                            <td>PQRS</td>
-                                            <td>XY</td>
-                                        </tr>
-                                    </table>
-                                    <div class="informacion-adicional">
-                                        <div class="info-col">Fecha</div>
-                                        <div class="info-col">Hora</div>
-                                        <div class="info-col">Reparación</div>
-                                        <div class="info-col">Estado</div>
-                                    </div>
-                                    <div class="botones">
-                                        <button class="cancelar" onclick="cerrarModal()">Cerrar</button>
-                                        <button class="ir" onclick="encontrarAveria()">Ir</button>
-                                    </div>    
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-
-                document.body.appendChild(modal);
-
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        cerrarModal();
-                    }
-                });
-            }
-
-            function cerrarModal() {
-                let modal = document.getElementById('modal');
-                if (modal) {
-                    modal.remove();
-                }
-            }
-
-            document.addEventListener("DOMContentLoaded", function () {
-                document.querySelectorAll(".mini-contenedor").forEach(contenedor => {
-                    if (contenedor.classList.contains("borde-rojo")) {
-                        contenedor.classList.add("activo");
-                    } else if (contenedor.classList.contains("borde-verde")) {
-                        contenedor.classList.add("resuelto");
-                    }
-                });
-            });
-        </script>
-
         <script>
             document.getElementById('logoutLink').addEventListener('click', function (e) {
-                e.preventDefault(); 
+                e.preventDefault();
                 mostrarModalLogout();
             });
 
             function mostrarModalLogout() {
                 let modal = document.getElementById('logoutModal');
-                modal.classList.add('active'); 
+                modal.classList.add('active');
             }
 
             function cerrarModalLogout() {
                 let modal = document.getElementById('logoutModal');
-                modal.classList.remove('active'); 
+                modal.classList.remove('active');
             }
 
             function confirmarLogout() {
-                window.location.href = "logout.jsp"; 
+                window.location.href = "logout.jsp";
             }
+            
+            document.getElementById('logoutLinkP').addEventListener('click', function (e) {
+                e.preventDefault();
+                mostrarModalLogout();
+            });
+
         </script>
     </body>
 </html>

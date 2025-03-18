@@ -122,7 +122,7 @@
             </div>
 
 
-            <div class="contenedor">
+            <div class="contenedor anadir">
                 <div class="contenidoaltaav">
                     <div class="izquierda">
                         <h1>Alta de avería</h1>
@@ -202,8 +202,8 @@
                             </div>
 
                             <div class="botones">
-                                <button type="submit" class="confirmar">Agregar avería</button>
-                                <button type="button" class="cancelar" onclick="descargarArchivo()"> Imprimir comprobante </button>
+                                <button type="submit" class="confirmar anadirtexto" >Agregar avería</button>
+                                <button type="button" class="cancelar anadirtexto" onclick="descargarArchivo()"> Imprimir comprobante </button>
                             </div>
 
                         </form>
@@ -475,6 +475,7 @@
             function confirmarLogout() {
                 window.location.href = "logout.jsp"; 
             }
+            
         </script>
     </body>
 </html>

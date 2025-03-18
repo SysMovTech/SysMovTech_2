@@ -120,7 +120,7 @@
                 <div class="titulo-navegador">Perfil</div>
             </div>
             <form action="" method="">
-                <div class="contenedor">
+                <div class="contenedor altadetrabajadores">
                     <div class="contenido">
                         <div class="izquierda">
                             <h1>Editar perfil</h1>
@@ -133,7 +133,7 @@
                             <div class="subtitulo">Confirmar contraseña</div>
                             <input type="text" name="confirmar_contrasena" class="info-input">
                         </div>
-                        <div class="derecha">
+                        <div class="derecha no">
                             <!-- acá va la cosa de la bd donde se recupera la dirección de la imagen ok -->
                             <img src="recursos/tec b.png" alt="Perfil">
                         </div>

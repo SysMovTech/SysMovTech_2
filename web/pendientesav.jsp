@@ -138,20 +138,36 @@
                 <div class="contenedor-responsivo">
                     <div class="fila-contenedores">
                         <div class="mini-contenedor borde-rojo">
-                            <img src="recursos/linea8.png" alt="Imagen 1" class="imagen-contenedor">
+                            <img src="recursos/linea3.png" alt="Imagen 1" class="imagen-contenedor">
 
                             <div class="descpendiente">
                                 <div class="titulo-contenedor">
                                     <div class="titulo"><strong>Lugar</strong></div>
-                                    <img src="recursos/linea8.png" alt="linea" class="mini-linea">
+                                    <img src="recursos/linea3.png" alt="linea" class="mini-linea">
                                 </div>
                                 <div class="desc">
-                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                    <div class="texto-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
                                 </div>
                             </div>
                         </div>
 
 
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea5.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea5.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+
+                    <div class="fila-contenedores">
                         <div class="mini-contenedor borde-rojo">
                             <img src="recursos/linea8.png" alt="Imagen 1" class="imagen-contenedor">
 
@@ -161,12 +177,57 @@
                                     <img src="recursos/linea8.png" alt="linea" class="mini-linea">
                                 </div>
                                 <div class="desc">
-                                    <div class="texto-desc">Descripción detallada y con muchas letraaaas</div>
+                                    <div class="texto-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
                                 </div>
                             </div>
                         </div>
-                    </div>          
 
+
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea2.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea2.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/lineaA.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/lineaA.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mini-contenedor borde-rojo">
+                            <img src="recursos/linea1.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Lugar</strong></div>
+                                    <img src="recursos/linea1.png" alt="linea" class="mini-linea">
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -222,7 +283,7 @@
                                             <td>Nombre</td>
                                             <td>Nombre</td>
                                             <td>Estación</td>
-                                            <td>Descripción de la avería y muchas abreviaciones que no entiendo</td>
+                                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
                                             <td>
                                                 <div class="folinea">
                                                     <img src="recursos/linea8.png">

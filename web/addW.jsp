@@ -120,7 +120,7 @@
             </div>
 
             <form action="" method="">
-                <div class="contenedor">
+                <div class="contenedor altadetrabajadores">
                     <div class="contenido">
                         <div class="izquierda">
                             <h1>Alta de trabajador</h1>
@@ -137,12 +137,12 @@
                                 <option value="Supervisor">Supervisor</option>
                             </select>
                         </div>
-                        <div class="derecha">
+                        <div class="derecha no">
                             <!-- acá va la cosa de la bd donde se recupera la dirección de la imagen ok -->
                             <img src="recursos/per b.png" alt="Perfil">
                         </div>
                     </div>
-                    <div class="botones">
+                    <div class="botones altatrabajador">
                         <button type="submit" class="confirmar">Confirmar</button>
                         <button type="button" class="cancelar" onclick="window.location.href = 'VW.jsp'">Cancelar</button>
                     </div>

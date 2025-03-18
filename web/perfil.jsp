@@ -136,7 +136,7 @@
                 </div>
             </div>
 
-            <div class="contenedor">
+            <div class="contenedor altadetrabajadores">
                 <div class="contenido">
                     <div class="izquierda">
                         <h1>Ver perfil</h1>
@@ -149,7 +149,7 @@
                         <div class="subtitulo">Rol laboral</div>
                         <input type="text" value="Información de la base de datos" readonly class="info-input">   
                     </div>
-                    <div class="derecha">
+                    <div class="derecha no">
                         <!-- acá va la cosa de la bd donde se recupera la dirección de la imagen ok -->
                         <img src="recursos/tec b.png" alt="Perfil">
                     </div>
@@ -189,4 +189,3 @@
         </script>
     </body>
 </html>
-
