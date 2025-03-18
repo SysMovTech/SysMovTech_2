@@ -328,7 +328,7 @@
                         <div class="contenedor-scroll-avr-ver">
                             <div class="fila-contenedores-avr">
                                 <div class="contenedorveravr-ver">
-                                    <h1>Ver avería</h1>
+                                    <h1>Descripción</h1>
                                     <table class="tabla-contenido">
                                         <tr>
                                             <td style="width: 7%">No CC <br> No PDC</td>
