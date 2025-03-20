@@ -900,6 +900,19 @@ textarea.info-input-addF {
     .contenedor-responsivo.notificaciones{
         margin-top: -140px;
     }
+    
+    .campocolumna{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .info-input-add{
+        width: 100%;
+    }
+    
+    .info-input-addB{
+        width: 100%;
+    }
 }
 
 

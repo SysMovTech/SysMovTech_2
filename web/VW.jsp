@@ -153,7 +153,143 @@
                                 </div>
                             </div>
                         </div>
-                    </div>          
+                    </div>    
+                    
+                    
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor">
+                            <img src="recursos/tec b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Nombre</strong></div>
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">No. Trabajador: </div>
+                                    <div class="texto-desc">Rol laboral: </div>
+                                    <div class="texto-desc">Estado: </div>                            
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mini-contenedor">
+                            <img src="recursos/sup b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Nombre</strong></div>
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">No. Trabajador: </div>
+                                    <div class="texto-desc">Rol laboral: </div>
+                                    <div class="texto-desc">Estado: </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor">
+                            <img src="recursos/tec b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Nombre</strong></div>
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">No. Trabajador: </div>
+                                    <div class="texto-desc">Rol laboral: </div>
+                                    <div class="texto-desc">Estado: </div>                            
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mini-contenedor">
+                            <img src="recursos/tec b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Nombre</strong></div>
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">No. Trabajador: </div>
+                                    <div class="texto-desc">Rol laboral: </div>
+                                    <div class="texto-desc">Estado: </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor">
+                            <img src="recursos/sup b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Nombre</strong></div>
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">No. Trabajador: </div>
+                                    <div class="texto-desc">Rol laboral: </div>
+                                    <div class="texto-desc">Estado: </div>                            
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mini-contenedor">
+                            <img src="recursos/tec b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Nombre</strong></div>
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">No. Trabajador: </div>
+                                    <div class="texto-desc">Rol laboral: </div>
+                                    <div class="texto-desc">Estado: </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="fila-contenedores">
+                        <div class="mini-contenedor">
+                            <img src="recursos/sup b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Nombre</strong></div>
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">No. Trabajador: </div>
+                                    <div class="texto-desc">Rol laboral: </div>
+                                    <div class="texto-desc">Estado: </div>                            
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mini-contenedor">
+                            <img src="recursos/tec b.png" alt="Imagen 1" class="imagen-contenedor">
+
+                            <div class="descpendiente">
+                                <div class="titulo-contenedor">
+                                    <div class="titulo"><strong>Nombre</strong></div>
+                                </div>
+                                <div class="desc">
+                                    <div class="texto-desc">No. Trabajador: </div>
+                                    <div class="texto-desc">Rol laboral: </div>
+                                    <div class="texto-desc">Estado: </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
